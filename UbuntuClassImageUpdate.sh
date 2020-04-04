@@ -34,19 +34,23 @@ echo " "
 echo "Do you wish to install this program?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) echo "you said Yes"; break;;
+        Yes ) 
+            echo "you said Yes"; 
+            echo "----------------------------------------------------";
+            echo "Running Upgrade with -y";
+            echo "----------------------------------------------------";
+            echo " ";
+            # sudo apt-get upgrade -y;
+            echo "this is where I would run a command";
+            echo " ";
+            echo "----------------------------------------------------";
+            echo "Done running Upgrade";
+            echo "----------------------------------------------------";
+            break;;
         No ) exit;;
     esac
 done
-echo "----------------------------------------------------"
-echo "Running Upgrade with -y"
-echo "----------------------------------------------------"
-echo " "
-# sudo apt-get upgrade -y
-echo " "
-echo "----------------------------------------------------"
-echo "Done running Upgrade"
-echo "----------------------------------------------------"
+
 echo " "
 
 
