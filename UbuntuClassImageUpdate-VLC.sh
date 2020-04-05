@@ -1,4 +1,5 @@
 #! /bin/bash
+# UbuntuClassImageUpdate-VLC.sh
 # VLC - this is a  Video and Music Media Player app.  
 # See: https://www.vlchelp.com/install-ubuntu-linux/ for some install tips.
 # You can take a look at https://www.vlchelp.com/vlc-media-player/ about it.
