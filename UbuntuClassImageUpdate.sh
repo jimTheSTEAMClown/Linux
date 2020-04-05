@@ -44,10 +44,10 @@ done
 # ============================================================================
 # update the software install to update with main universe restricted multiverse
 # echo "----------------------------------------------------"
-# echo "update the software install to update with main universe restricted multiverse"
+# echo "listing which software repositories are used - main universe restricted multiverse"
 # echo "----------------------------------------------------"
 # sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
-$ grep ^[^#] /etc/apt/sources.list /etc/apt/sources.list.d/*
+$ grep ^[^#] /etc/apt/sources.list
 
 echo "Do you wish to run $ sudo apt-get update -y?"
 select yn in "Yes" "No"; do
