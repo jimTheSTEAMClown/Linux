@@ -46,8 +46,10 @@ done
 # echo "----------------------------------------------------"
 # echo "listing which software repositories are used - main universe restricted multiverse"
 # echo "----------------------------------------------------"
-# sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
 $ grep ^[^#] /etc/apt/sources.list
+# sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+
 
 echo "Do you wish to run $ sudo apt-get update -y?"
 select yn in "Yes" "No"; do
@@ -71,7 +73,6 @@ echo "Do you wish to run $ sudo apt-get upgrade -y?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
-            echo "you said Yes"; 
             echo "----------------------------------------------------";
             echo "Running Upgrade with -y";
             echo "----------------------------------------------------";
@@ -85,6 +86,46 @@ select yn in "Yes" "No"; do
         No ) break;;
     esac
 done
+
+echo "Do you wish to install the following tools or apps?"
+echo "List Apps"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) 
+            echo "----------------------------------------------------";
+            echo "installing X";
+            echo "----------------------------------------------------";
+            echo " ";
+            # sudo apt-get X -y;
+            echo " ";
+            echo "----------------------------------------------------";
+            echo "Done Installing X";
+            echo "----------------------------------------------------";
+            break;;
+        No ) break;;
+    esac
+done
+
+echo "Do you wish to Install these tools or apps?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) 
+            echo "----------------------------------------------------";
+            echo "Installing x";
+            echo "----------------------------------------------------";
+            echo " ";
+            sudo apt-get install gnome-tweak-tool
+            
+            echo " ";
+            echo "----------------------------------------------------";
+            echo "Done Installing X";
+            echo "----------------------------------------------------";
+            break;;
+        No ) break;;
+    esac
+done
+
+
 
 echo "----------------------------------------------------"
 echo "Done running Ubuntu Class Image Build"
