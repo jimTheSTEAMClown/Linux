@@ -51,23 +51,17 @@ done
 grep ^[^#] /etc/apt/sources.list
 # sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 echo " "
+
 echo "----------------------------------------------------"
 echo "Ready... I'm going to run "
 echo "  Going to run $ update with -y"
 echo "  Going to run $ upgrade with -y" 
 echo "----------------------------------------------------"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) 
-            break;;
-        No ) 
-            echo "----------------------------------------------------"
-            echo "Exiting Without Update" 
-            echo "----------------------------------------------------"
-            exit;;
-    esac
-done
-
+echo "Do you wish to run UPDATE and UPGRADE?  Enter y/Y or n/N or any Key?"
+read -p "update and upgrade?: " yesInstall
+# elif statements
+if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
+then
 echo "----------------------------------------------------"
 echo "Running $ update with -y"
 echo "----------------------------------------------------"
@@ -86,20 +80,34 @@ echo " "
 echo "----------------------------------------------------"
 echo "Done running Upgrade"
 echo "----------------------------------------------------"
-
-echo "Do you wish to run this script?"
-read -p "VLC: " yesVLC
-# elif statements
-if [ $yesVLC == "y" ] || [ $yesVLC == "Y" ]
+elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
 then
-echo You may go to the party.
-elif [ $yesVLC == "n" ] || [ $yesVLC == "N" ]
-then
-echo You may go to the party but be back before midnight.
+echo "Skipping this install"
 else
-echo You may not go to the party.
+echo "Skipping this install"
 fi
 
+echo "Do you wish to install VLC?  Enter y/Y or n/N or any Key?"
+read -p "Install VLC?: " yesInstall
+# elif statements
+if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
+then
+echo "----------------------------------------------------"
+echo "Installing VLC"
+echo "Running $ bash UbuntuClassImageUpdate-VLC.sh"
+echo "----------------------------------------------------"
+echo " "
+bash UbuntuClassImageUpdate-VLC.sh
+echo " "
+echo "----------------------------------------------------"
+echo "Done running script"
+echo "----------------------------------------------------"
+elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
+then
+echo "Skipping this install"
+else
+echo "Skipping this install"
+fi
 
 # sudo apt-get update -y;
 # sudo apt-get upgrade -y;
