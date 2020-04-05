@@ -41,6 +41,13 @@ select yn in "Yes" "No"; do
             exit;;
     esac
 done
+# ============================================================================
+# update the software install to update with main universe restricted multiverse
+echo "----------------------------------------------------"
+echo "update the software install to update with main universe restricted multiverse"
+echo "----------------------------------------------------"
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+
 echo "Do you wish to run $ sudo apt-get update -y?"
 select yn in "Yes" "No"; do
     case $yn in
