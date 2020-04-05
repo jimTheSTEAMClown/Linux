@@ -90,10 +90,10 @@ echo "----------------------------------------------------"
 echo "Do you wish to run this script?"
 read -p "VLC: " yesVLC
 # elif statements
-if [ $yesVLC == "y" || $yesVLC == "Y" ]
+if [ $yesVLC == "y" ] || [ $yesVLC == "Y" ]
 then
 echo You may go to the party.
-elif [ $yesVLC == "n" || $yesVLC == "N" ]
+elif [ $yesVLC == "n" ] || [ $yesVLC == "N" ]
 then
 echo You may go to the party but be back before midnight.
 else
