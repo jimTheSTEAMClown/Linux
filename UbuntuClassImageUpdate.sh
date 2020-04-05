@@ -47,7 +47,7 @@ done
 # echo "listing which software repositories are used - main universe restricted multiverse"
 # echo "----------------------------------------------------"
 # sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
-$ grep ^[^#] /etc/apt/sources.list
+grep ^[^#] /etc/apt/sources.list
 # sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 
 
@@ -111,7 +111,7 @@ select yn in "Yes" "No"; do
             echo "----------------------------------------------------";
             echo " ";
             # sudo snap install VLC;
-            sudo apt-get install vlc;
+            sudo apt-get install vlc -y;
             echo " ";
             echo "----------------------------------------------------";
             echo "Done Installing VLC";
@@ -148,11 +148,11 @@ select yn in "Yes" "No"; do
             echo "----------------------------------------------------";
             echo " ";
             sudo apt update;
-            sudo apt install software-properties-common apt-transport-https wget;
+            sudo apt install software-properties-common apt-transport-https wget -y;
             wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -;
-            sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main";
+            sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y;
             sudo apt update;
-            sudo apt install code;
+            sudo apt install code -y;
             # code -V
             echo " ";
             echo "----------------------------------------------------";
@@ -171,7 +171,7 @@ select yn in "Yes" "No"; do
             echo "----------------------------------------------------";
             echo " ";
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
-            sudo apt install ./google-chrome-stable_current_amd64.deb;
+            sudo apt install ./google-chrome-stable_current_amd64.deb -y;
             cat /etc/apt/sources.list.d/google-chrome.list;
             echo " ";
             echo "----------------------------------------------------";
@@ -194,9 +194,9 @@ select yn in "Yes" "No"; do
             echo "Installing gnome-tweak-tools";
             echo "----------------------------------------------------";
             echo " ";
-            sudo apt-get install gnome-tweak-tool;
-            sudo add-apt-repository ppa:webupd8team/gnome3;
-            sudo apt-get update;
+            sudo apt-get install gnome-tweak-tool -y;
+            sudo add-apt-repository ppa:webupd8team/gnome3 -y;
+            sudo apt-get update -y;
             sudo apt-get install gnome-shell-extensions-user-themes -y;
             gnome-shell --version;
             
@@ -208,8 +208,8 @@ select yn in "Yes" "No"; do
         No ) break;;
     esac
 done
-
-
+sudo apt-get update -y;
+sudo apt-get upgrade -y;
 
 echo "----------------------------------------------------"
 echo "Done running Ubuntu Class Image Build"
