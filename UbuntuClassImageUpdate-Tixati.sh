@@ -7,7 +7,7 @@ echo "----------------------------------------------------"
 echo "installing tixati"
 echo "----------------------------------------------------"
 echo " "
-sudo wget https://download2.tixati.com/download/tixati_2.72-1_amd64.deb
+sudo wget -O tixati_2.72-1_amd64.deb https://download2.tixati.com/download/tixati_2.72-1_amd64.deb
 sudo dpkg -i tixati_2.72-1_amd64.deb
 sudo dpkg -l tixati
 echo " "
