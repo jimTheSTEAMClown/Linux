@@ -88,18 +88,93 @@ select yn in "Yes" "No"; do
 done
 
 echo "Do you wish to install the following tools or apps?"
-echo "List Apps"
+echo "Apps List"
+# tps://www.vlchelp.com/install-ubuntu-linux/
+echo "VLC"
+
+# https://www.tixati.com/download/linux.html
+# http://elinuxbook.com/install-tixati-torrent-client-in-ubuntu-16-04-a-best-torrent-software-for-linux/
+echo "tixati"
+
+# https://code.visualstudio.com/download
+# https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-18-04/
+echo "Visual Studio Code"
+
+echo "Chrome"
+
+echo "Do you wish to install VLC?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
             echo "----------------------------------------------------";
-            echo "installing X";
+            echo "installing VLC";
             echo "----------------------------------------------------";
             echo " ";
-            # sudo apt-get X -y;
+            sudo snap install VLC;
             echo " ";
             echo "----------------------------------------------------";
-            echo "Done Installing X";
+            echo "Done Installing VLC";
+            echo "----------------------------------------------------";
+            break;;
+        No ) break;;
+    esac
+done
+echo "Do you wish to install Tixati?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) 
+            echo "----------------------------------------------------";
+            echo "installing tixati";
+            echo "----------------------------------------------------";
+            echo " ";
+            sudo wget https://download2.tixati.com/download/tixati_2.72-1_amd64.deb
+            sudo dpkg -i tixati_2.72-1_amd64.deb
+            sudo dpkg -l tixati
+            echo " ";
+            echo "----------------------------------------------------";
+            echo "Done Installing tixati";
+            echo "----------------------------------------------------";
+            break;;
+        No ) break;;
+    esac
+done
+echo "Do you wish to install Visual Studio Code?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )             
+            echo "----------------------------------------------------";
+            echo "installing Visual Studio Code";
+            echo "----------------------------------------------------";
+            echo " ";
+            sudo apt update
+            sudo apt install software-properties-common apt-transport-https wget
+            wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+            sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+            sudo apt update
+            sudo apt install code
+            # code -V
+            echo " ";
+            echo "----------------------------------------------------";
+            echo "Done Installing Visual Studio Code";
+            echo "----------------------------------------------------";
+            break;;
+        No ) break;;
+    esac
+done
+echo "Do you wish to install Chrome?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )             
+            echo "----------------------------------------------------";
+            echo "installing Chrome";
+            echo "----------------------------------------------------";
+            echo " ";
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
+            sudo apt install ./google-chrome-stable_current_amd64.deb
+            cat /etc/apt/sources.list.d/google-chrome.list
+            echo " ";
+            echo "----------------------------------------------------";
+            echo "Done Installing Chrome";
             echo "----------------------------------------------------";
             break;;
         No ) break;;
@@ -107,18 +182,26 @@ select yn in "Yes" "No"; do
 done
 
 echo "Do you wish to Install these tools or apps?"
+# https://www.wikihow.com/Change-Themes-on-Ubuntu-with-Gnome-Tweak-Tool
+#https://itsfoss.com/gnome-tweak-tool/
+echo "gnome-tweak-tools"
+
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
             echo "----------------------------------------------------";
-            echo "Installing x";
+            echo "Installing gnome-tweak-tools";
             echo "----------------------------------------------------";
             echo " ";
             sudo apt-get install gnome-tweak-tool
+            sudo add-apt-repository ppa:webupd8team/gnome3
+            sudo apt-get update
+            sudo apt-get install gnome-shell-extensions-user-themes -y
+            gnome-shell --version
             
             echo " ";
             echo "----------------------------------------------------";
-            echo "Done Installing X";
+            echo "Done Installing gnome-tweak-tools";
             echo "----------------------------------------------------";
             break;;
         No ) break;;
