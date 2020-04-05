@@ -17,16 +17,16 @@
 # Additional Comments: 
 # see https://www.answers.com/Q/How_do_you_make_a_yes_no_command_in_cmd to add more features
 # ============================================================================
-echo "----------------------------------------------------";
-echo "Ubuntu Class Image Update Script"; 
-echo "----------------------------------------------------";
+echo "----------------------------------------------------"
+echo "Ubuntu Class Image Update Script" 
+echo "----------------------------------------------------"
 echo " "
 pwd
 ls -l
 echo " "
-echo "----------------------------------------------------";
+echo "----------------------------------------------------"
 echo "Do you wish run the Ubuntu Class Image Update?"
-echo "----------------------------------------------------";
+echo "----------------------------------------------------"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
