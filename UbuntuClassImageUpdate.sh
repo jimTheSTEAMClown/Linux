@@ -20,18 +20,40 @@
 
 pwd
 ls -l
+echo "Do you wish run the Ubuntu Class Image Update?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) 
+            echo "----------------------------------------------------";
+            echo "Running Ubuntu Class Image Update"; 
+            echo "----------------------------------------------------";
+            break;;
+        No ) 
+            echo "----------------------------------------------------";
+            echo "Exiting Without Update"; 
+            echo "----------------------------------------------------";
+            exit;;
+    esac
+done
+echo "Do you wish to run $ sudo apt-get update -y?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) 
+            echo "----------------------------------------------------";
+            echo "Running Update with -y";
+            echo "----------------------------------------------------";
+            echo " ";
+            sudo apt-get update -y;
+            echo " ";
+            echo "----------------------------------------------------";
+            echo "Done running Update";
+            echo "----------------------------------------------------";
+            break;;
+        No ) break;;
+    esac
+done
 
-echo "----------------------------------------------------"
-echo "Running Update"
-echo "----------------------------------------------------"
-echo " "
-# sudo apt-get update -y
-echo " "
-echo "----------------------------------------------------"
-echo "Done running update"
-echo "----------------------------------------------------"
-echo " "
-echo "Do you wish to install this program?"
+echo "Do you wish to run $ sudo apt-get upgrade -y?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
@@ -40,19 +62,15 @@ select yn in "Yes" "No"; do
             echo "Running Upgrade with -y";
             echo "----------------------------------------------------";
             echo " ";
-            # sudo apt-get upgrade -y;
-            echo "this is where I would run a command";
+            sudo apt-get upgrade -y;
             echo " ";
             echo "----------------------------------------------------";
             echo "Done running Upgrade";
             echo "----------------------------------------------------";
             break;;
-        No ) exit;;
+        No ) break;;
     esac
 done
-
-echo " "
-
 
 echo "----------------------------------------------------"
 echo "Done running Ubuntu Class Image Build"
