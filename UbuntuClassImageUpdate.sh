@@ -109,6 +109,28 @@ else
 echo "Skipping this install"
 fi
 
+echo "Do you wish to install Tixati?  It is a torrent program.  Enter y/Y or n/N or any Key?"
+read -p "Install Tixati?: " yesInstall
+# elif statements
+if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
+then
+echo "----------------------------------------------------"
+echo "Installing VLC"
+echo "Running $ bash UbuntuClassImageUpdate-Tixati.sh"
+echo "----------------------------------------------------"
+echo " "
+bash UbuntuClassImageUpdate-Tixati.sh
+echo " "
+echo "----------------------------------------------------"
+echo "Done running script"
+echo "----------------------------------------------------"
+elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
+then
+echo "Skipping this install"
+else
+echo "Skipping this install"
+fi
+
 # sudo apt-get update -y;
 # sudo apt-get upgrade -y;
 echo "----------------------------------------------------"
