@@ -19,5 +19,6 @@ sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-VLC.sh
 echo " ----------------------------------------------------"
 echo "Done copying all the classImageBuild files"
 echo " ----------------------------------------------------"
-cd classImageBuild
-# sudo bash UbuntuClassImageUpdate.sh
+echo "Now, cd into the classImageBuild Directory and run the following command"
+echo "cd classImageBuild"
+echo "sudo bash UbuntuClassImageUpdate.sh"
