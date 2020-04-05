@@ -6,7 +6,6 @@ echo "----------------------------------------------------"
 echo "  [script VLC] Installing VLC"
 echo "----------------------------------------------------"
 echo " "
-echo "Installing VLC" 
 sudo apt-get install vlc -y
 sudo apt-get update -y
 sudo apt-get upgrade -y
