@@ -109,17 +109,61 @@ else
 echo "Skipping this install"
 fi
 
+echo "Do you wish to install Visual Studion Code?  Enter y/Y or n/N or any Key?"
+read -p "Install VSC?: " yesInstall
+# elif statements
+if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
+then
+echo "----------------------------------------------------"
+echo "Installing VSC"
+echo "Running $ bash UbuntuClassImageUpdate-VSC.sh"
+echo "----------------------------------------------------"
+echo " "
+bash UbuntuClassImageUpdate-VSC.sh
+echo " "
+echo "----------------------------------------------------"
+echo "Done running script"
+echo "----------------------------------------------------"
+elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
+then
+echo "Skipping this install"
+else
+echo "Skipping this install"
+fi
+
 echo "Do you wish to install Tixati?  It is a torrent program.  Enter y/Y or n/N or any Key?"
 read -p "Install Tixati?: " yesInstall
 # elif statements
 if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
 then
 echo "----------------------------------------------------"
-echo "Installing VLC"
+echo "Installing Tixati"
 echo "Running $ bash UbuntuClassImageUpdate-Tixati.sh"
 echo "----------------------------------------------------"
 echo " "
 bash UbuntuClassImageUpdate-Tixati.sh
+echo " "
+echo "----------------------------------------------------"
+echo "Done running script"
+echo "----------------------------------------------------"
+elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
+then
+echo "Skipping this install"
+else
+echo "Skipping this install"
+fi
+
+echo "Do you wish to install Chrome?  Enter y/Y or n/N or any Key?"
+read -p "Install Chrome?: " yesInstall
+# elif statements
+if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
+then
+echo "----------------------------------------------------"
+echo "Installing Chrome"
+echo "Running $ bash UbuntuClassImageUpdate-Chrome.sh"
+echo "----------------------------------------------------"
+echo " "
+bash UbuntuClassImageUpdate-Chrome.sh
 echo " "
 echo "----------------------------------------------------"
 echo "Done running script"
