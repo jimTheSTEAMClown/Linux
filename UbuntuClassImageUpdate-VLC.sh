@@ -7,8 +7,14 @@ echo "----------------------------------------------------"
 echo "  [script VLC] Installing VLC"
 echo "----------------------------------------------------"
 echo " "
+echo "----------------------------------------------------"
+echo "sudo apt-get install vlc -y"
 sudo apt-get install vlc -y
+echo "----------------------------------------------------"
+echo "sudo apt-get update -y"
 sudo apt-get update -y
+echo "----------------------------------------------------"
+echo "sudo apt-get upgrade -y"
 sudo apt-get upgrade -y
 vlc -V
 echo " "
