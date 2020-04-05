@@ -46,7 +46,7 @@ done
 # echo "----------------------------------------------------"
 # echo "listing which software repositories are used - main universe restricted multiverse"
 # echo "----------------------------------------------------"
-sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+# sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
 $ grep ^[^#] /etc/apt/sources.list
 # sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 
@@ -110,7 +110,8 @@ select yn in "Yes" "No"; do
             echo "installing VLC";
             echo "----------------------------------------------------";
             echo " ";
-            sudo snap install VLC;
+            # sudo snap install VLC;
+            sudo apt-get install vlc;
             echo " ";
             echo "----------------------------------------------------";
             echo "Done Installing VLC";
@@ -127,9 +128,9 @@ select yn in "Yes" "No"; do
             echo "installing tixati";
             echo "----------------------------------------------------";
             echo " ";
-            sudo wget https://download2.tixati.com/download/tixati_2.72-1_amd64.deb
-            sudo dpkg -i tixati_2.72-1_amd64.deb
-            sudo dpkg -l tixati
+            sudo wget https://download2.tixati.com/download/tixati_2.72-1_amd64.deb;
+            sudo dpkg -i tixati_2.72-1_amd64.deb;
+            sudo dpkg -l tixati;
             echo " ";
             echo "----------------------------------------------------";
             echo "Done Installing tixati";
@@ -146,12 +147,12 @@ select yn in "Yes" "No"; do
             echo "installing Visual Studio Code";
             echo "----------------------------------------------------";
             echo " ";
-            sudo apt update
-            sudo apt install software-properties-common apt-transport-https wget
-            wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-            sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-            sudo apt update
-            sudo apt install code
+            sudo apt update;
+            sudo apt install software-properties-common apt-transport-https wget;
+            wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -;
+            sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main";
+            sudo apt update;
+            sudo apt install code;
             # code -V
             echo " ";
             echo "----------------------------------------------------";
@@ -170,8 +171,8 @@ select yn in "Yes" "No"; do
             echo "----------------------------------------------------";
             echo " ";
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
-            sudo apt install ./google-chrome-stable_current_amd64.deb
-            cat /etc/apt/sources.list.d/google-chrome.list
+            sudo apt install ./google-chrome-stable_current_amd64.deb;
+            cat /etc/apt/sources.list.d/google-chrome.list;
             echo " ";
             echo "----------------------------------------------------";
             echo "Done Installing Chrome";
@@ -193,11 +194,11 @@ select yn in "Yes" "No"; do
             echo "Installing gnome-tweak-tools";
             echo "----------------------------------------------------";
             echo " ";
-            sudo apt-get install gnome-tweak-tool
-            sudo add-apt-repository ppa:webupd8team/gnome3
-            sudo apt-get update
-            sudo apt-get install gnome-shell-extensions-user-themes -y
-            gnome-shell --version
+            sudo apt-get install gnome-tweak-tool;
+            sudo add-apt-repository ppa:webupd8team/gnome3;
+            sudo apt-get update;
+            sudo apt-get install gnome-shell-extensions-user-themes -y;
+            gnome-shell --version;
             
             echo " ";
             echo "----------------------------------------------------";
