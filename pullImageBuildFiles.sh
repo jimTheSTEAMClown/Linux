@@ -40,7 +40,12 @@ echo "Apps build file"
 echo " ----------------------------------------------------"
 sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-Apps.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/UbuntuClassImageUpdate-Apps.sh
 sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-Apps.sh
-UbuntuClassImageUpdate-Apps.sh
+
+echo " ----------------------------------------------------"
+echo "VIM build file"
+echo " ----------------------------------------------------"
+sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-VIM.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/UbuntuClassImageUpdate-VIM.sh
+sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-VIM.sh
 
 echo " ----------------------------------------------------"
 echo "Done copying all the classImageBuild files"
