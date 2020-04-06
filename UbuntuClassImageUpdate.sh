@@ -206,8 +206,8 @@ else
 echo "Skipping this install"
 fi
 
-# sudo apt-get update -y;
-# sudo apt-get upgrade -y;
+# sudo apt-get update -y
+# sudo apt-get upgrade -y
 echo "----------------------------------------------------"
 echo "Done running Ubuntu Class Image Build"
 echo "----------------------------------------------------"
