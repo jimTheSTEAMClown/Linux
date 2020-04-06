@@ -9,7 +9,7 @@ echo "    GIMP - https://tecadmin.net/install-gimp-on-ubuntu/"
 echo "    Audacity - http://ubuntuhandbook.org/index.php/2018/09/audacity-2-3-0-released-install-ubuntu-18-10/"
 echo "    GIT - https://linuxize.com/post/how-to-install-git-on-ubuntu-18-04/"
 echo "    MAKE - https://www.vim.org/ and # https://phoenixnap.com/kb/how-to-install-vim-ubuntu"
-echo "    VIM - https://www.vim.org/ and # https://phoenixnap.com/kb/how-to-install-vim-ubuntu"
+echo "    "
 echo "----------------------------------------------------"
 
 echo "----------------------------------------------------"
@@ -31,8 +31,8 @@ echo "----------------------------------------------------"
 echo "sudo apt-get update"
 sudo apt-get update
 echo "----------------------------------------------------"
-echo "sudo apt-get install gimp"
-sudo apt-get install gimp
+echo "sudo apt-get install gimp -y"
+sudo apt-get install gimp -y
 echo "----------------------------------------------------"
 echo "gimp -v"
 gimp -v
@@ -43,22 +43,22 @@ sudo apt update
 echo "----------------------------------------------------"
 
 echo "----------------------------------------------------"
-echo "sudo add-apt-repository ppa:ubuntuhandbook1/audacity"
-sudo add-apt-repository ppa:ubuntuhandbook1/audacity
+echo "sudo add-apt-repository ppa:ubuntuhandbook1/audacity -y"
+sudo add-apt-repository ppa:ubuntuhandbook1/audacity -y
 echo "----------------------------------------------------"
 echo "sudo apt update"
 sudo apt update
 echo "----------------------------------------------------"
-echo "sudo apt-get install audacity"
-sudo apt-get install audacity
+echo "sudo apt-get install audacity -y"
+sudo apt-get install audacity -y
 echo "----------------------------------------------------"
 
 # VIM - https://phoenixnap.com/kb/how-to-install-vim-ubuntu
-echo "sudo apt-get install libncurses5-dev libncursesw5-dev"
-sudo apt-get install libncurses5-dev libncursesw5-dev
+echo "sudo apt-get install libncurses5-dev libncursesw5-dev -y"
+sudo apt-get install libncurses5-dev libncursesw5-dev -y
 
-echo "sudo apt install git"
-sudo apt install git
+echo "sudo apt install git -y"
+sudo apt install git -y
 echo "git --version"
 git --version
 # Now that you have git installed, it is a good idea to set up your 
@@ -72,7 +72,7 @@ read -p "update and upgrade?: " yesADD
 # elif statements
 if [ $yesADD == "y" ] || [ $yesADD == "Y" ]
 then
-echo "Let's get some data for VIM"
+echo "Let's get some data for GIT"
 read -p "Enter Your Name?: " YourName
 read -p "Enter Your Email?: " YourEmail
 echo "git config --global user.name $YourName"
@@ -89,30 +89,12 @@ fi
 echo "To verify the configuration changes, type:"
 git config --list
 echo "----------------------------------------------------"
-echo "sudo apt install make"
-sudo apt install make
-sudo apt install build-essential
+echo "sudo apt install make -y"
+sudo apt install make -y
 echo "----------------------------------------------------"
-# VIM - https://phoenixnap.com/kb/how-to-install-vim-ubuntu
-echo "sudo git clone https://github.com/vim/vim.git"
-sudo git clone https://github.com/vim/vim.git
+echo "sudo apt install build-essential -y"
+sudo apt install build-essential -y
 echo "----------------------------------------------------"
-echo "cd vim/src"
-cd vim/src
-echo "----------------------------------------------------"
-echo "sudo make"
-sudo make
-echo "----------------------------------------------------"
-echo "sudo make install"
-sudo make install
-echo "----------------------------------------------------"
-echo "which vim"
-which vim
-echo "----------------------------------------------------"
-echo "vim -v"
-vim -v
-cd ..
-cd ..
 
 
 
