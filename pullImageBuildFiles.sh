@@ -42,6 +42,13 @@ sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-Apps.sh https://raw.github
 sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-Apps.sh
 
 echo " ----------------------------------------------------"
+echo "UbuntuClassImageUpdate-AfterReboot.sh build file"
+echo " ----------------------------------------------------"
+sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-AfterReboot.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/UbuntuClassImageUpdate-AfterReboot.sh
+sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-AfterReboot.sh
+
+
+echo " ----------------------------------------------------"
 echo "VIM build file"
 echo " ----------------------------------------------------"
 sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-VIM.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/UbuntuClassImageUpdate-VIM.sh
