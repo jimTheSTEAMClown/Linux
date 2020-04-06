@@ -175,6 +175,37 @@ else
 echo "Skipping this install"
 fi
 
+echo "Do you wish to install Apps & Tools?  Enter y/Y or n/N or any Key?"
+read -p "Install Apps & Tools?: " yesInstall
+# elif statements
+if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
+then
+echo "----------------------------------------------------"
+echo "Installing a bunch of tools"
+echo "    Check UbuntuClassImageUpdate-Apps.sh for a complete list"
+echo "    bash-completion"
+echo "    HTOP - https://www.makeuseof.com/tag/5-powerful-alternatives-windows-task-manager/"
+echo "    GIMP - https://tecadmin.net/install-gimp-on-ubuntu/"
+echo "    Audacity - http://ubuntuhandbook.org/index.php/2018/09/audacity-2-3-0-released-install-ubuntu-18-10/"
+echo "    GIT - https://linuxize.com/post/how-to-install-git-on-ubuntu-18-04/"
+echo "    MAKE - https://www.vim.org/ and # https://phoenixnap.com/kb/how-to-install-vim-ubuntu"
+echo "    VIM - https://www.vim.org/ and # https://phoenixnap.com/kb/how-to-install-vim-ubuntu"
+echo "----------------------------------------------------"
+echo "Running $ bash UbuntuClassImageUpdate-Apps.sh"
+echo "----------------------------------------------------"
+echo " "
+bash UbuntuClassImageUpdate-Apps.sh
+echo " "
+echo "----------------------------------------------------"
+echo "Done running script"
+echo "----------------------------------------------------"
+elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
+then
+echo "Skipping this install"
+else
+echo "Skipping this install"
+fi
+
 # sudo apt-get update -y;
 # sudo apt-get upgrade -y;
 echo "----------------------------------------------------"
