@@ -36,6 +36,13 @@ sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-Chrome.sh https://raw.gith
 sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-Chrome.sh
 
 echo " ----------------------------------------------------"
+echo "Apps build file"
+echo " ----------------------------------------------------"
+sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-Apps.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/UbuntuClassImageUpdate-Apps.sh
+sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-Apps.sh
+UbuntuClassImageUpdate-Apps.sh
+
+echo " ----------------------------------------------------"
 echo "Done copying all the classImageBuild files"
 echo " ----------------------------------------------------"
 echo "Now, cd into the classImageBuild Directory and run the following command"
