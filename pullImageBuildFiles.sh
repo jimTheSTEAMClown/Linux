@@ -55,6 +55,12 @@ sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-VIM.sh https://raw.githubu
 sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-VIM.sh
 
 echo " ----------------------------------------------------"
+echo "Arduino build file"
+echo " ----------------------------------------------------"
+sudo wget -O ./classImageBuild/UbuntuClassImageUpdate-Arduino.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/UbuntuClassImageUpdate-Arduino.sh
+sudo chmod 755 ./classImageBuild/UbuntuClassImageUpdate-Arduino.sh
+
+echo " ----------------------------------------------------"
 echo "Done copying all the classImageBuild files"
 echo " ----------------------------------------------------"
 echo "Now, cd into the classImageBuild Directory and run the following command"
