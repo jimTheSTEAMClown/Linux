@@ -1,5 +1,11 @@
 https://www.arduino.cc/download_handler.php?f=/arduino-1.8.13-linux32.tar.xz
 
 sudo wget https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/pullImageBuildFiles.sh 
+sudo chmod 755 pullImageBuildFiles.sh
+sudo cat pullImageBuildFiles.sh
+sudo bash pullImageBuildFiles.sh
 
 sudo wget https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/pullImageBuildFiles-32.sh 
+sudo chmod 755 pullImageBuildFiles-32.sh
+sudo cat pullImageBuildFiles-32.sh
+sudo bash pullImageBuildFiles-32.sh
