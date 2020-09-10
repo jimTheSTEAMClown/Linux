@@ -1,20 +1,24 @@
 #! /bin/bash
 # UbuntuClassImageUpdate-Arduino.sh
-# Installing Arduino 32 bit Software...  
+# Installing Arduino 64 bit Software...  
 echo "----------------------------------------------------"
-echo "installing Chrome"
+echo "installing Arduino 64 Bit IDE"
 echo "----------------------------------------------------"
 echo " "
 echo "----------------------------------------------------"
-echo "sudo wget -O google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-sudo wget -O google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+echo "sudo wget https://www.arduino.cc/download_handler.php?f=/arduino-1.8.13-linux64.tar.xz"
+sudo wget https://www.arduino.cc/download_handler.php?f=/arduino-1.8.13-linux64.tar.xz
 echo "----------------------------------------------------"
-echo "sudo apt install ./google-chrome-stable_current_amd64.deb -y"
-sudo apt install ./google-chrome-stable_current_amd64.deb -y
+echo "sudo tar xvf arduino-1.8.13-linux64.tar.xz -y"
+sudo tar xvf arduino-1.8.13-linux64.tar.xz -y
 echo "----------------------------------------------------"
-echo "cat /etc/apt/sources.list.d/google-chrome.list"
-cat /etc/apt/sources.list.d/google-chrome.list
+echo "ls"
+ls
 echo " "
+cd arduino-*
+pwd
+ls
+#sudo ./install.sh
 echo "----------------------------------------------------"
-echo "Done Installing Chrome"
+echo "Done Installing Arduino IDE"
 echo "----------------------------------------------------"
