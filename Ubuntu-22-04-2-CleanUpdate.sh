@@ -56,8 +56,8 @@ echo " "
 
 echo "----------------------------------------------------"
 echo "Ready... I'm going to run "
-echo "  Going to run $ update with -y"
-echo "  Going to run $ upgrade with -y" 
+echo "  Going to run $ sudo apt update"
+echo "  Going to run $ sudo apt upgrade with -y" 
 echo "----------------------------------------------------"
 echo "Do you wish to run UPDATE and UPGRADE?  Enter y/Y or n/N or any Key?"
 read -p "update and upgrade?: " yesInstall
