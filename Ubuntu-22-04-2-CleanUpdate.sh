@@ -130,6 +130,11 @@ else
 echo "Skipping this install"
 fi
 
+# Listing Apps
+echo "listing the location of the installed Apps
+which curl
+which git
+
 # sudo apt update
 # sudo apt upgrade -y
 echo "----------------------------------------------------"
