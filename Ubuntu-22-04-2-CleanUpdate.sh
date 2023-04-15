@@ -109,16 +109,16 @@ if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
 then
 echo "----------------------------------------------------"
 echo "Installing curl"
-echo "Running $ sudo apt install curl"
+echo "Running $ sudo apt install curl -y"
 echo "----------------------------------------------------"
 echo " "
-sudo apt install curl
+sudo apt install curl -y
 echo " "
 echo "Installing git"
-echo "Running $ sudo apt install git"
+echo "Running $ sudo apt install git -y"
 echo "----------------------------------------------------"
 echo " "
-sudo apt install git
+sudo apt install git -y
 echo " "
 echo "----------------------------------------------------"
 echo "Done running App installs and updates"
