@@ -131,7 +131,7 @@ echo "Skipping this install"
 fi
 
 # Listing Apps
-echo "listing the location of the installed Apps
+echo "listing the location of the installed Apps"
 which curl
 which git
 
