@@ -129,6 +129,8 @@ echo "Running $ sudo apt install openssh-server -y"
 echo "----------------------------------------------------"
 echo " "
 sudo apt install openssh-server -y
+# sudo systemctl status ssh
+sudo ufw allow ssh
 echo " "
 echo "Installing net tools (for ifconfig) "
 echo "Running $ sudo apt install net-tools -y"
@@ -151,7 +153,7 @@ echo "listing the location of the installed Apps"
 which curl
 which git
 which ssh
-sudo systemctl status ssh
+# sudo systemctl status ssh
 which ifconfig
 ifconfig
 
