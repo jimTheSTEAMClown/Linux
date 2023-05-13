@@ -53,7 +53,10 @@ done
 # grep ^[^#] /etc/apt/sources.list
 # sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 echo " "
-
+echo "  _  _  ___  ___   __  ____  __  _  _  __ "
+echo " ( )( )(  ,\(   \ (  )(_  _)(  )( \( )/ _) "
+echo "  )()(  ) _/ ) ) )/__\  )(   )(  )  (( (/\ "
+echo "  \__/ (_)  (___/(_)(_)(__) (__)(_)\_)\__/ "
 echo "----------------------------------------------------"
 echo "Ready... I'm going to run "
 echo "  Going to run $ sudo apt update"
@@ -100,6 +103,7 @@ echo "of the standard Ubuntu build, but I find you will use them lots..."
 echo "I'm installing:"
 echo " - curl"
 echo " - git"
+echo " - ssh"
 echo " "
 echo "Do you wish to install these? Dude, just say 'Yes' Trust me."
 echo "Enter y/Y or n/N or any Key?"
@@ -120,6 +124,18 @@ echo "----------------------------------------------------"
 echo " "
 sudo apt install git -y
 echo " "
+echo "Installing ssh"
+echo "Running $ sudo apt install openssh-server -y"
+echo "----------------------------------------------------"
+echo " "
+sudo apt install openssh-server -y
+echo " "
+echo "Installing net tools (for ifconfig) "
+echo "Running $ sudo apt install net-tools -y"
+echo "----------------------------------------------------"
+echo " "
+sudo apt install net-tools -y
+echo " "
 echo "----------------------------------------------------"
 echo "Done running App installs and updates"
 echo "----------------------------------------------------"
@@ -134,10 +150,27 @@ fi
 echo "listing the location of the installed Apps"
 which curl
 which git
+which ssh
+sudo systemctl status ssh
+which ifconfig
+ifconfig
 
 # sudo apt update
 # sudo apt upgrade -y
+
+echo "-------------------------------------------------------"
+echo "  ___    __  _  _  ___  "
+echo " (   \  /  \( \( )(  _) "
+echo "  ) ) )( () ))  (  ) _) "
+echo " (___/  \__/(_)\_)(___) "
+echo " "
 echo "----------------------------------------------------"
 echo "Done running Ubuntu 22.04.2 Class Image Build"
-echo "----------------------------------------------------"
 echo " "
+echo "----------------------------------------------------"
+echo "  _  _  ____  _  _  ____    ___  ____  ____  ____  ___ "
+echo " ( \( )( ___)( \/ )(_  _)  / __)(_  _)( ___)(  _ \/ __) "
+echo "  )  (  )__)  )  (   )(    \__ \  )(   )__)  )___/\__ \ "
+echo " (_)\_)(____)(_/\_) (__)   (___/ (__) (____)(__)  (___/ "
+echo " "
+echo "List the next steps here"
