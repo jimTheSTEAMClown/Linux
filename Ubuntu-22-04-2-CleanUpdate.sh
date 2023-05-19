@@ -164,12 +164,15 @@ echo " "
 echo "----------------------------------------------------"
 echo " "
 sudo apt install ubuntu-gnome-desktop
-gsettings set org.gnome.settings-daemon.plugins.power sleep-display-ac 600
-gsettings set org.gnome.settings-daemon.plugins.power sleep-display-battery 600
-gsettings set org.gnome.desktop.session idle-delay 600
-gsettings set org.gnome.desktop.screensaver idle-activation-enabled 'true'
-gsettings set org.gnome.desktop.screensaver lock-enabled 'true'
+gsettings set org.gnome.desktop.session idle-delay 800
 gsettings set org.gnome.desktop.screensaver lock-delay 900
+
+# gsettings set org.gnome.settings-daemon.plugins.power sleep-display-ac 600
+# gsettings set org.gnome.settings-daemon.plugins.power sleep-display-battery 600
+# gsettings set org.gnome.desktop.session idle-delay 600
+# gsettings set org.gnome.desktop.screensaver idle-activation-enabled 'true'
+# gsettings set org.gnome.desktop.screensaver lock-enabled 'true'
+# gsettings set org.gnome.desktop.screensaver lock-delay 900
 echo " "
 echo "----------------------------------------------------"
 echo "Done running App installs and updates"
