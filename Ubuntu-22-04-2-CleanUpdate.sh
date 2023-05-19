@@ -163,6 +163,7 @@ echo "Installing Stuff "
 echo " "
 echo "----------------------------------------------------"
 echo " "
+sudo apt install ubuntu-gnome-desktop
 gsettings set org.gnome.settings-daemon.plugins.power sleep-display-ac 600
 gsettings set org.gnome.settings-daemon.plugins.power sleep-display-battery 600
 gsettings set org.gnome.desktop.session idle-delay 600
