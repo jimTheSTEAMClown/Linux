@@ -150,17 +150,25 @@ echo " "
 mkdir tmp-download
 cd tmp-download
 wget -O ./tmp-download/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+cd ~
+
 echo " "
 echo "----------------------------------------------------"
 echo "Done running App installs and updates"
 echo "----------------------------------------------------"
 
 echo " "
-echo "Installing net tools (for ifconfig) "
-echo "Running $ sudo apt install net-tools -y"
+echo "Installing Stuff "
+echo " "
 echo "----------------------------------------------------"
 echo " "
-sudo apt install net-tools -y
+gsettings set org.gnome.settings-daemon.plugins.power sleep-display-ac 600
+gsettings set org.gnome.settings-daemon.plugins.power sleep-display-battery 600
+gsettings set org.gnome.desktop.session idle-delay 600
+gsettings set org.gnome.desktop.screensaver idle-activation-enabled 'true'
+gsettings set org.gnome.desktop.screensaver lock-enabled 'true'
+gsettings set org.gnome.desktop.screensaver lock-delay 900
 echo " "
 echo "----------------------------------------------------"
 echo "Done running App installs and updates"
