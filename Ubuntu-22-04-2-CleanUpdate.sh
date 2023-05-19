@@ -141,6 +141,30 @@ echo " "
 echo "----------------------------------------------------"
 echo "Done running App installs and updates"
 echo "----------------------------------------------------"
+
+echo " "
+echo "Installing Google Chrome"
+# echo "Running $ sudo apt install net-tools -y"
+echo "----------------------------------------------------"
+echo " "
+mkdir tmp-download
+cd tmp-download
+wget -O ./tmp-download/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+echo " "
+echo "----------------------------------------------------"
+echo "Done running App installs and updates"
+echo "----------------------------------------------------"
+
+echo " "
+echo "Installing net tools (for ifconfig) "
+echo "Running $ sudo apt install net-tools -y"
+echo "----------------------------------------------------"
+echo " "
+sudo apt install net-tools -y
+echo " "
+echo "----------------------------------------------------"
+echo "Done running App installs and updates"
+echo "----------------------------------------------------"
 elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
 then
 echo "Skipping this install"
