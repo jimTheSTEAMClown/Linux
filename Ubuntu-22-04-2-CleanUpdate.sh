@@ -174,9 +174,12 @@ gsettings set org.gnome.desktop.screensaver lock-delay 900
 # gsettings set org.gnome.desktop.screensaver idle-activation-enabled 'true'
 # gsettings set org.gnome.desktop.screensaver lock-enabled 'true'
 # gsettings set org.gnome.desktop.screensaver lock-delay 900
+
+sudo apt install arduino -y
+
 echo " "
 echo "----------------------------------------------------"
-echo "Done running App installs and updates"
+echo "Done running STUFF"
 echo "----------------------------------------------------"
 elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
 then
