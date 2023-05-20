@@ -149,7 +149,7 @@ echo "----------------------------------------------------"
 echo " "
 mkdir tmp-download
 cd tmp-download
-wget -O ./tmp-download/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget -O google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 cd ~
 
