@@ -175,6 +175,9 @@ gsettings set org.gnome.desktop.screensaver lock-delay 900
 # gsettings set org.gnome.desktop.screensaver lock-delay 900
 
 sudo apt install arduino -y
+# Installing Visual Studion Code
+sudo snap install --classic code
+
 
 echo " "
 echo "----------------------------------------------------"
@@ -190,11 +193,16 @@ fi
 # Listing Apps
 echo "listing the location of the installed Apps"
 which curl
+curl --version
 which git
+git --version
 which ssh
+which arduino
+# arduino --version 
 # sudo systemctl status ssh
 which ifconfig
 ifconfig
+code --version
 
 # sudo apt update
 # sudo apt upgrade -y
