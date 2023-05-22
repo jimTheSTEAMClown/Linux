@@ -12,6 +12,8 @@
 # Description:    shell script to restore an Ubuntu Linux Class Image after a clean Ubuntu installl 
 # Dependencies:   
 # Revision: 
+#  Revision 0.04 - Updated 05/21/2023 for SVCTE Mechatronics Class using Ubuntu 22.04.2
+#  - Added install for Google-chrome, Arduino, and Gnome-desktop tools
 #  Revision 0.03 - Updated 04/14/2023 for SVCTE Mechatronics Class using Ubuntu 22.04.2
 #  - Added install for curl and git
 #  Revision 0.02 - Updated 04/04/2020 for SVCTE Mechatronics Class
@@ -45,13 +47,6 @@ select yn in "Yes" "No"; do
     esac
 done
 # ============================================================================
-# update the software install to update with main universe restricted multiverse
-# echo "----------------------------------------------------"
-# echo "listing which software repositories are used - main universe restricted multiverse"
-# echo "----------------------------------------------------"
-# sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
-# grep ^[^#] /etc/apt/sources.list
-# sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 echo " "
 echo "  _  _  ___  ___   __  ____  __  _  _  __ "
 echo " ( )( )(  ,\(   \ (  )(_  _)(  )( \( )/ _) "
@@ -103,7 +98,11 @@ echo "of the standard Ubuntu build, but I find you will use them lots..."
 echo "I'm installing:"
 echo " - curl"
 echo " - git"
-echo " - ssh"
+echo " - openssh-server"
+echo " - net-tools"
+echo " - google-chrome"
+echo " - ubuntu-gnome-desktop"
+echo " - arduino"
 echo " "
 echo "Do you wish to install these? Dude, just say 'Yes' Trust me."
 echo "Enter y/Y or n/N or any Key?"
