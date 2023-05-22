@@ -163,7 +163,7 @@ echo "Installing Stuff "
 echo " "
 echo "----------------------------------------------------"
 echo " "
-sudo apt install ubuntu-gnome-desktop
+sudo apt install ubuntu-gnome-desktop -y
 gsettings set org.gnome.desktop.session idle-delay 800
 gsettings set org.gnome.desktop.screensaver lock-delay 900
 
