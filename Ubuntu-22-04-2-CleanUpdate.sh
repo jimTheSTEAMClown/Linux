@@ -174,6 +174,8 @@ gsettings set org.gnome.desktop.screensaver lock-delay 900
 # gsettings set org.gnome.desktop.screensaver lock-enabled 'true'
 # gsettings set org.gnome.desktop.screensaver lock-delay 900
 
+sudo apt install vim -y
+sudo apt install thonny -y
 sudo apt install arduino -y
 # Installing Visual Studion Code
 sudo snap install --classic code
