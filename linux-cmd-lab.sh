@@ -27,3 +27,4 @@ mkdir linuxCommandLab
 # cd linuxCommandLab
 mkdir ./linuxCommandLab/labFiles_1
 sudo wget -O ./linuxCommandLab/labFiles_1/my_file_1.txt https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/linux_cmd_lab_my_file_1.txt
+sudo wget -O ./linuxCommandLab/labFiles_1/my_file_2.txt https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/linux_cmd_lab_my_file_2.txt
