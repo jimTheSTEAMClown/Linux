@@ -14,12 +14,12 @@
 # Dependencies:   
 # Revision: 
 #  
-#  Revision 0.02 - Updated 02/21/2024 for SVCTE Mechatronics Class
-#  Revision 0.01 - Created 02/21/2024
+#  Revision 0.02 - Updated 03/10/2024 for SVCTE Mechatronics Class
+#  Revision 0.01 - Created 03/10/2024
 # Additional Comments:
 # ============================================================================
 # copy to your /home/<USER> directory
-# sudo wget -O ./linux-cmd-lab.sh https://github.com/jimTheSTEAMClown/RaspberryPi/blob/master/linux-cmd-lab.sh
+# sudo wget -O ./linux-cmd-lab.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/linux-cmd-lab.sh
 # sudo chmod 755 ./linux-cmd-lab.sh
 # sudo cat ./linux-cmd-lab.sh
 cd ~
