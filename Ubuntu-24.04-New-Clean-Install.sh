@@ -8,18 +8,16 @@
 # https://creativecommons.org/licenses/by-nc-sa/4.0/
 # https://www.gnu.org/licenses/gpl-3.0.en.html
 # https://eupl.eu/
-# Program/Design Name:		Ubuntu-22-04-2-CleanUpdate.sh
+# Program/Design Name:		Ubuntu-24.04-New-Clean-Install.sh
 # Description:    shell script to restore an Ubuntu Linux Class Image after a clean Ubuntu installl 
 # Dependencies:   
 # Revision: 
-#  Revision 0.04 - Updated 05/21/2023 for SVCTE Mechatronics Class using Ubuntu 22.04.2
-#  - Added install for Google-chrome, Arduino, and Gnome-desktop tools
-#  Revision 0.03 - Updated 04/14/2023 for SVCTE Mechatronics Class using Ubuntu 22.04.2
-#  - Added install for curl and git
-#  Revision 0.02 - Updated 04/04/2020 for SVCTE Mechatronics Class
-#  Revision 0.01 - Created 04/04/2020
+#  Revision 0.02 - Updated 05/04/2024 for SVCTE Mechatronics Class
+#  Revision 0.01 - Created 05/04/2024
 # Additional Comments: 
-# see https://www.answers.com/Q/How_do_you_make_a_yes_no_command_in_cmd to add more features
+# https://ubuntu.com/tutorials/access-remote-desktop#1-overview
+# https://askubuntu.com/questions/1369973/how-to-connect-to-ubuntu-via-vnc-from-windows
+# https://www.makeuseof.com/tag/how-to-establish-simple-remote-desktop-access-between-ubuntu-and-windows/
 # ============================================================================
 echo "----------------------------------------------------"
 echo "Ubuntu Class Image Update Script" 
@@ -98,7 +96,9 @@ echo "of the standard Ubuntu build, but I find you will use them lots..."
 echo "I'm installing:"
 echo " - curl"
 echo " - git"
+echo " - ssh"
 echo " - openssh-server"
+echo " - PuTTY"
 echo " - net-tools"
 echo " - google-chrome"
 echo " - ubuntu-gnome-desktop"
@@ -124,12 +124,24 @@ echo " "
 sudo apt install git -y
 echo " "
 echo "Installing ssh"
+echo "Running $ sudo apt install ssh -y"
+echo "----------------------------------------------------"
+echo " "
+sudo apt install ssh -y
+echo " "
+echo "Installing openssh"
 echo "Running $ sudo apt install openssh-server -y"
 echo "----------------------------------------------------"
 echo " "
 sudo apt install openssh-server -y
 # sudo systemctl status ssh
 sudo ufw allow ssh
+echo " "
+echo "Installing putty"
+echo "Running $ sudo apt install putty -y"
+echo "----------------------------------------------------"
+echo " "
+sudo apt install putty -y
 echo " "
 echo "Installing net tools (for ifconfig) "
 echo "Running $ sudo apt install net-tools -y"
@@ -200,6 +212,7 @@ curl --version
 which git
 git --version
 which ssh
+which putty
 which arduino
 # arduino --version 
 # sudo systemctl status ssh
