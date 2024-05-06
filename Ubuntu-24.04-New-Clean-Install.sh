@@ -20,7 +20,7 @@
 # https://www.makeuseof.com/tag/how-to-establish-simple-remote-desktop-access-between-ubuntu-and-windows/
 #
 # Copy This wget
-# sudo wget -O Ubuntu-24.04-New-Clean-Install.sh https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
+# sudo wget -O Ubuntu-24.04-New-Clean-Install.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/Ubuntu-24.04-New-Clean-Install.sh 
 # ============================================================================
 echo "----------------------------------------------------"
 echo "Ubuntu Class Image Update Script" 
