@@ -18,6 +18,9 @@
 # https://ubuntu.com/tutorials/access-remote-desktop#1-overview
 # https://askubuntu.com/questions/1369973/how-to-connect-to-ubuntu-via-vnc-from-windows
 # https://www.makeuseof.com/tag/how-to-establish-simple-remote-desktop-access-between-ubuntu-and-windows/
+#
+# Copy This wget
+# sudo wget -O Ubuntu-24.04-New-Clean-Install.sh https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
 # ============================================================================
 echo "----------------------------------------------------"
 echo "Ubuntu Class Image Update Script" 
