@@ -8,7 +8,7 @@
 # https://creativecommons.org/licenses/by-nc-sa/4.0/
 # https://www.gnu.org/licenses/gpl-3.0.en.html
 # https://eupl.eu/
-# Program/Design Name:		Ubuntu-22-04-2-CleanUpdate.sh
+# Program/Design Name:		Ubuntu-22-04-3-CleanUpdate.sh
 # Description:    shell script to restore an Ubuntu Linux Class Image after a clean Ubuntu installl 
 # Dependencies:   
 # Revision: 
