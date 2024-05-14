@@ -181,6 +181,10 @@ sudo apt install arduino -y
 # Installing Visual Studion Code
 sudo snap install --classic code
 
+# More Stuff
+sudo apt install scrot -y
+sudo apt install net-tools -y
+
 
 echo " "
 echo "----------------------------------------------------"
