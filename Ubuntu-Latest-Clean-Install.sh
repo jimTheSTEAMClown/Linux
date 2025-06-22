@@ -54,6 +54,7 @@ echo "  _  _  ___  ___   __  ____  __  _  _  __ "
 echo " ( )( )(  ,\(   \ (  )(_  _)(  )( \( )/ _) "
 echo "  )()(  ) _/ ) ) )/__\  )(   )(  )  (( (/\ "
 echo "  \__/ (_)  (___/(_)(_)(__) (__)(_)\_)\__/ "
+echo " Checking If The Script Logging Directory Exists "
 echo "----------------------------------------------------"
 echo " Do you wish to check if the Loging directory exists in $USER home?"
 echo " Enter yY nN"
@@ -71,7 +72,12 @@ echo "----------------------------------------------------"
 echo "Running $ [ -d \"/path/dir/\" ] && echo \"Directory /path/dir/ exists.\" "
 echo "----------------------------------------------------"
 echo " "
-sudo [ -d "./bob" ] && echo "Directory ./bob exists."
+if [ -d "/Script_Logs" };
+    then
+        echo "The Directory /Script_Logs exists"
+else 
+    echo " The Directory Does Not Exist"
+fi
 echo " "
 echo "----------------------------------------------------"
 echo "Done running logging Dir check"
