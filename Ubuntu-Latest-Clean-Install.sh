@@ -72,7 +72,7 @@ echo "----------------------------------------------------"
 echo "Running $ [ -d \"/path/dir/\" ] && echo \"Directory /path/dir/ exists.\" "
 echo "----------------------------------------------------"
 echo " "
-if [ -d "/Script_Logs" ];
+if [ -d "/bob" ];
     then
         echo "The Directory /Script_Logs exists"
 else 
