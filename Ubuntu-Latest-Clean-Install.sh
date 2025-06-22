@@ -56,6 +56,7 @@ echo "  )()(  ) _/ ) ) )/__\  )(   )(  )  (( (/\ "
 echo "  \__/ (_)  (___/(_)(_)(__) (__)(_)\_)\__/ "
 echo "----------------------------------------------------"
 echo " Do you wish to check if the Loging directory exists in $USER home?"
+echo " Enter yY nN"
 read -p "Check For Logging Directory In $USER Home?: " yesCheck
 # elif statements
 if [ $yesCheck == "y" ] || [ $yesCheck == "Y" ]
@@ -70,7 +71,7 @@ echo "----------------------------------------------------"
 echo "Running $ [ -d \"/path/dir/\" ] && echo \"Directory /path/dir/ exists.\" "
 echo "----------------------------------------------------"
 echo " "
-sudo [ -d "./Install_Logs" ] && echo "Directory ./Install_Logs exists."
+sudo [ -d "./Ibob" ] && echo "Directory ./bob exists."
 echo " "
 echo "----------------------------------------------------"
 echo "Done running logging Dir check"
