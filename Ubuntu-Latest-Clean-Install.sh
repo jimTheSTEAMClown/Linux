@@ -50,15 +50,24 @@ select yn in "Yes" "No"; do
     esac
 done
 # ============================================================================
+echo " # ============================================================================ "
 echo " "
 echo "  _  _  ___  ___   __  ____  __  _  _  __ "
 echo " ( )( )(  ,\(   \ (  )(_  _)(  )( \( )/ _) "
 echo "  )()(  ) _/ ) ) )/__\  )(   )(  )  (( (/\ "
 echo "  \__/ (_)  (___/(_)(_)(__) (__)(_)\_)\__/ "
+
+# ============================================================================
+echo " # ============================================================================ "
+echo " "
+echo "   ___  _   _  ____  ___  _  _    __    _____  ___    ____  ____  ____ "
+echo "  / __)( )_( )( ___)/ __)( )/ )  (  )  (  _  )/ __)  (  _ \(_  _)(  _ \ "
+echo " ( (__  ) _ (  )__)( (__  )  (    )(__  )(_)(( (_-.   )(_) )_)(_  )   / "
+echo "  \___)(_) (_)(____)\___)(_)\_)  (____)(_____)\___/  (____/(____)(_)\_) "
 echo " Checking If The Script Logging Directory Exists "
 echo "----------------------------------------------------"
 echo " Do you wish to check if the Loging directory exists in $USER home?"
-echo " Enter yY nN"
+echo " Enter y/Y or n/N or any Key?"
 read -p "Check For Logging Directory In $USER Home?: " yesCheck
 # elif statements
 if [ $yesCheck == "y" ] || [ $yesCheck == "Y" ]
@@ -70,16 +79,24 @@ echo " "
 cd ~
 pwd
 echo "----------------------------------------------------"
-echo "Running $ [ -d \"/path/dir/\" ] && echo \"Directory /path/dir/ exists.\" "
+echo "Running $ [ -d \"/path/dir/\" ] "
 echo "----------------------------------------------------"
 echo " "
     if [ -d "./Script_Logs" ];
         then
             echo "The Directory $USER/Script_Logs exists"
     else 
+# ============================================================================
+echo " # ============================================================================ "
+echo " "  
+echo "   ___  ____  ____    __   ____  ____    ____  ____  ____ "
+echo "  / __)(  _ \( ___)  /__\ (_  _)( ___)  (  _ \(_  _)(  _ \ "
+echo " ( (__  )   / )__)  /(__)\  )(   )__)    )(_) )_)(_  )   / "
+echo "  \___)(_)\_)(____)(__)(__)(__) (____)  (____/(____)(_)\_) "
+      
         echo " The Directory Does Not Exist"
         echo " Do you wish to create this directory in $USER home?"
-        echo " Enter yY nN"
+        echo " Enter y/Y or n/N or any Key?"
         read -p "Check For Creating Directory In $USER Home?: " yesCreateLogDir
         # if statements to check if you want to create the direcotry
         if [ $yesCreateLogDir == "y" ] || [ $yesCreateLogDir == "Y" ]
@@ -108,7 +125,12 @@ echo "Skipping this Logging Dir Check"
 else
 echo "Should Not See This Message"
 fi
-
+echo " # ============================================================================ "
+echo " "  
+echo "  __  __  ____  ____    __   ____  ____      _    __  __  ____   ___  ____    __    ____  ____ "
+echo " (  )(  )(  _ \(  _ \  /__\ (_  _)( ___)    / )  (  )(  )(  _ \ / __)(  _ \  /__\  (  _ \( ___) "
+echo "  )(__)(  )___/ )(_) )/(__)\  )(   )__)    / /    )(__)(  )___/( (_-. )   / /(__)\  )(_) ))__) "
+echo " (______)(__)  (____/(__)(__)(__) (____)  (_/    (______)(__)   \___/(_)\_)(__)(__)(____/(____) "
 echo "Ready... I'm going to run "
 echo "  Going to run $ sudo apt update"
 echo "  Going to run $ sudo apt upgrade with -y" 
