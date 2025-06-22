@@ -72,34 +72,35 @@ echo "----------------------------------------------------"
 echo "Running $ [ -d \"/path/dir/\" ] && echo \"Directory /path/dir/ exists.\" "
 echo "----------------------------------------------------"
 echo " "
-if [ -d "./Script_Logs" ];
-    then
-        echo "The Directory $USER/Script_Logs exists"
-else 
-    echo " The Directory Does Not Exist"
-    echo " Do you wish to create this directory in $USER home?"
-    echo " Enter yY nN"
-    read -p "Check For Logging Directory In $USER Home?: " yesCreateLogDir
-    # if statements to check if you want to create the direcotry
-    if [ $yesCreateLogDir == "y" ] || [ $yesCreateLogDir == "Y" ]
+    if [ -d "./Script_Logs" ];
         then
-            echo "----------------------------------------------------"
-            echo "Creating the Script_Logs Directory in $USER "
-            echo "----------------------------------------------------"
-            sudo mkdir Script_Logs
-            if [ -d "./Script_Logs" ]; then echo "The Directory $USER/Script_Logs exists"
-            echo "----------------------------------------------------"
-            fi
-    elif [ $yesCreateLogDir == "n" ] || [ $yesCreateLogDir == "N" ]
-        then
-            echo "Skipping The Script_Logs Directory Creation"
-    else
-            echo "Should Not See This Message"
+            echo "The Directory $USER/Script_Logs exists"
+    else 
+        echo " The Directory Does Not Exist"
+        echo " Do you wish to create this directory in $USER home?"
+        echo " Enter yY nN"
+        read -p "Check For Creating Directory In $USER Home?: " yesCreateLogDir
+        # if statements to check if you want to create the direcotry
+        if [ $yesCreateLogDir == "y" ] || [ $yesCreateLogDir == "Y" ]
+            then
+                echo "----------------------------------------------------"
+                echo "Creating the Script_Logs Directory in $USER "
+                echo "----------------------------------------------------"
+                sudo mkdir Script_Logs
+                if [ -d "./Script_Logs" ]; then echo "The Directory $USER/Script_Logs exists"
+                echo "----------------------------------------------------"
+                fi
+        elif [ $yesCreateLogDir == "n" ] || [ $yesCreateLogDir == "N" ]
+            then
+                echo "Skipping The Script_Logs Directory Creation"
+        else
+                echo "Should Not See This Message"
+        fi
     fi
-echo " "
-echo "----------------------------------------------------"
-echo "Done running logging Dir check"
-echo "----------------------------------------------------"
+    echo " "
+    echo "----------------------------------------------------"
+    echo "Done running logging Dir check"
+    echo "----------------------------------------------------"
 elif [ $yesCheck == "n" ] || [ $yesCheck == "N" ]
 then
 echo "Skipping this Logging Dir Check"
