@@ -19,6 +19,7 @@
 # https://ubuntu.com/tutorials/access-remote-desktop#1-overview
 # https://askubuntu.com/questions/1369973/how-to-connect-to-ubuntu-via-vnc-from-windows
 # https://www.makeuseof.com/tag/how-to-establish-simple-remote-desktop-access-between-ubuntu-and-windows/
+# https://patorjk.com/software/taag/#p=display&f=Bulbhead&t=Next%20Steps%0A
 #
 # Copy This wget
 # sudo wget -O Ubuntu-Latest-Clean-Install.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/Ubuntu-Latest-Clean-Install.sh 
