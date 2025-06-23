@@ -68,7 +68,7 @@ echo " Checking If The Script Logging Directory Exists "
 echo "----------------------------------------------------"
 echo " Do you wish to check if the Loging directory exists in $USER home?"
 echo " Enter y/Y or n/N or any Key?"
-read -p "Check For Logging Directory In $USER Home?: " $yesDirCheck
+read -p "Check For Logging Directory In $USER Home?: " yesDirCheck
 # elif statements
 if [ "$yesDirCheck" == "y" ] || [ "$yesDirCheck" == "Y" ]
     then
