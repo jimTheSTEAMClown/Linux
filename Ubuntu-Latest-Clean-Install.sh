@@ -170,18 +170,19 @@ fi
 
 # ============================================================================
 echo " "  
-echo "  __  __  ____  ____    __   ____  ____      _    __  __  ____   ___  ____    __    ____  ____ "
-echo " (  )(  )(  _ \(  _ \  /__\ (_  _)( ___)    / )  (  )(  )(  _ \ / __)(  _ \  /__\  (  _ \( ___) "
-echo "  )(__)(  )___/ )(_) )/(__)\  )(   )__)    / /    )(__)(  )___/( (_-. )   / /(__)\  )(_) ))__) "
-echo " (______)(__)  (____/(__)(__)(__) (____)  (_/    (______)(__)   \___/(_)\_)(__)(__)(____/(____) "
-echo "Ready... I'm going to run "
-echo "  Going to run $ sudo apt update"
-echo "  Going to run $ sudo apt upgrade with -y" 
+echo "  ____  _  _  ___  ____   __    __    __        __    ____  ____  ___ "
+echo " (_  _)( \( )/ __)(_  _) /__\  (  )  (  )      /__\  (  _ \(  _ \/ __) "
+echo "  _)(_  )  ( \__ \  )(  /(__)\  )(__  )(__    /(__)\  )___/ )___/\__ \ "
+echo " (____)(_)\_)(___/ (__)(__)(__)(____)(____)  (__)(__)(__)  (__)  (___/ "
+  
+echo "Ready... I'm going to Install the follwoing Apps or Tools "
+echo "  Going to Install Shutter, a screen capture tool - run $ sudo apt install shutter -y"
+
 echo "----------------------------------------------------"
-echo "Do you wish to run UPDATE and UPGRADE?  Enter y/Y or n/N or any Key?"
-read -p "update and upgrade?: " yesUpdate
+echo "Do you wish to Install these Apps or Tools UPDATE and UPGRADE?  Enter y/Y or n/N or any Key?"
+read -p "Install Apps & Tools?: " yesAppsInstall
 # elif statements
-if [ "$yesUpdate" == "y" ] || [ "$yesUpdate" == "Y" ]
+if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
 then
 echo "----------------------------------------------------"
 echo "getting home with cd ~"
@@ -190,26 +191,20 @@ echo " "
 cd ~
 pwd
 echo "----------------------------------------------------"
-echo "Running $ update"
+echo "Running $ sudo apt install shutter -y"
 echo "----------------------------------------------------"
-echo " "
-sudo apt update
-echo " "
-echo "----------------------------------------------------"
-echo "Done running Update"
-echo "----------------------------------------------------"
-echo "----------------------------------------------------"
-echo "Running $ upgrade with -y"
-echo "----------------------------------------------------"
-echo " "
-sudo apt upgrade -y
+sudo apt install shutter
 echo " "
 echo "----------------------------------------------------"
-echo "Done running Upgrade"
+echo " "
 echo "----------------------------------------------------"
-elif [ "$yesUpdate" == "n" ] || [ "$yesUpdate" == "N" ]
+echo "Done running Apps & Tools Install
+echo "----------------------------------------------------"
+elif [ "$yesAppsInstall" == "n" ] || [ "$yesAppsInstall" == "N" ]
 then
 echo "Skipping this install"
+echo "You can install them individually using the following commands: "
+echo "sudo apt install shutter -y"
 else
 echo "Any Key - Skipping this install"
 fi
