@@ -70,7 +70,7 @@ echo " Do you wish to check if the Loging directory exists in $USER home?"
 echo " Enter y/Y or n/N or any Key?"
 read -p "Check For Logging Directory In $USER Home?: " yesCheck
 # elif statements
-if [ $yesCheck == "y" ] || [ $yesCheck == "Y" ]
+if [ "$yesCheck" == "y" ] || [ "$yesCheck" == "Y" ]
     then
     echo "----------------------------------------------------"
     echo "getting home with cd ~"
@@ -99,7 +99,7 @@ if [ $yesCheck == "y" ] || [ $yesCheck == "Y" ]
             echo " Enter y/Y or n/N or any Key?"
             read -p "Check For Creating Directory In $USER Home?: " yesCreateLogDir
             # if statements to check if you want to create the direcotry
-            if [ $yesCreateLogDir == "y" ] || [ $yesCreateLogDir == "Y" ]
+            if [ "$yesCreateLogDir" == "y" ] || [ "$yesCreateLogDir" == "Y" ]
                 then
                     echo "----------------------------------------------------"
                     echo "Creating the Script_Logs Directory in $USER "
@@ -108,7 +108,7 @@ if [ $yesCheck == "y" ] || [ $yesCheck == "Y" ]
                     if [ -d "./Script_Logs" ]; then echo "The Directory $USER/Script_Logs exists"
                     echo "----------------------------------------------------"
                     fi
-            elif [ $yesCreateLogDir == "n" ] || [ $yesCreateLogDir == "N" ]
+            elif [ "$yesCreateLogDir" == "n" ] || [ "$yesCreateLogDir" == "N" ]
                 then
                     echo "Skipping The Script_Logs Directory Creation"
             else
@@ -119,11 +119,11 @@ if [ $yesCheck == "y" ] || [ $yesCheck == "Y" ]
         echo "----------------------------------------------------"
         echo "Done running logging Dir check"
         echo "----------------------------------------------------"
-    elif [ $yesCheck == "n" ] || [ $yesCheck == "N" ]
+    elif [ "$yesCheck" == "n" ] || [ "$yesCheck" == "N" ]
         then
-        echo "Skipping this Logging Dir Check"
+        echo "Skipping this Creating Dir Step"
 else
-echo "Should Not See This Message"
+echo "Any Key - Skipping this Creating Dir Step"
 fi
 echo " # ============================================================================ "
 echo " "  
@@ -136,9 +136,9 @@ echo "  Going to run $ sudo apt update"
 echo "  Going to run $ sudo apt upgrade with -y" 
 echo "----------------------------------------------------"
 echo "Do you wish to run UPDATE and UPGRADE?  Enter y/Y or n/N or any Key?"
-read -p "update and upgrade?: " yesInstall
+read -p "update and upgrade?: " yesUpdate
 # elif statements
-if [ $yesInstall == "y" ] || [ $yesInstall == "Y" ]
+if [ "$yesUpdate" == "y" ] || [ "$yesUpdate" == "Y" ]
 then
 echo "----------------------------------------------------"
 echo "getting home with cd ~"
@@ -164,11 +164,11 @@ echo " "
 echo "----------------------------------------------------"
 echo "Done running Upgrade"
 echo "----------------------------------------------------"
-elif [ $yesInstall == "n" ] || [ $yesInstall == "N" ]
+elif [ "$yesUpdate" == "n" ] || [ "$yesUpdate" == "N" ]
 then
 echo "Skipping this install"
 else
-echo "Skipping this install"
+echo "Any Key - Skipping this install"
 fi
 
 
