@@ -11,7 +11,7 @@
 # Program/Design Name:		gowinInstall.sh
 
 # Copy This wget
-# sudo wget -O test.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/gowinInstall.sh 
+# sudo wget -O gowinInstall.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/gowinInstall.sh 
 # ============================================================================
 if [-z "S1" ]; then
   echo "----------------------------------------------------"
