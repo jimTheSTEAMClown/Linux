@@ -44,3 +44,9 @@ select yn in "Yes" "No"; do
 done
 
 echo "put your commands here.... "
+sudo mkdir -p /home/$USER/gowin
+# https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz
+sudo wget -O /home/$USER/gowin/Gowin_Latest.tar.gz https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz
+cd /home/$USER/gowin
+tar -xvzf Gowin_VLatest.tar.gz
+
