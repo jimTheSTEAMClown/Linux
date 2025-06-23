@@ -50,4 +50,7 @@ sudo wget -O /home/$USER/gowin/Gowin_Latest.tar.gz https://cdn.gowinsemi.com.cn/
 cd /home/$USER/gowin
 sudo tar -xvzf Gowin_Latest.tar.gz
 sudo rm Gowin_Latest.tar.gz
+ls -l
+# is there a check to make sure we got the right files installed?
+
 
