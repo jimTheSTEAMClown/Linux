@@ -106,7 +106,7 @@ if [ "$yesDirCheck" == "y" ] || [ "$yesDirCheck" == "Y" ]
                 echo "----------------------------------------------------"
                 sudo mkdir Script_Logs
                 if [ -d "./Script_Logs" ]; then echo "The Directory $USER/Script_Logs exists"
-                echo "----------------------------------------------------"
+                # echo "----------------------------------------------------"
                 fi
         elif [ "$yesCreateLogDir" == "n" ] || [ "$yesCreateLogDir" == "N" ]
             then
@@ -115,10 +115,7 @@ if [ "$yesDirCheck" == "y" ] || [ "$yesDirCheck" == "Y" ]
                 echo "Any Key - Skipping The Script_Logs Directory Creation"
         fi
     fi
-        echo " "
-        echo "----------------------------------------------------"
-        echo "Done running logging Dir check"
-        echo "----------------------------------------------------"
+    echo "----------------------------------------------------"
 elif [ "$yesDirCheck" == "n" ] || [ "$yesDirCheck" == "N" ]
     then
     echo "Skipping This Check For Logging Directory Step"
