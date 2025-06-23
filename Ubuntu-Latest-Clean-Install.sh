@@ -168,6 +168,52 @@ fi
 # sudo apt update
 # sudo apt upgrade -y
 
+# ============================================================================
+echo " "  
+echo "  __  __  ____  ____    __   ____  ____      _    __  __  ____   ___  ____    __    ____  ____ "
+echo " (  )(  )(  _ \(  _ \  /__\ (_  _)( ___)    / )  (  )(  )(  _ \ / __)(  _ \  /__\  (  _ \( ___) "
+echo "  )(__)(  )___/ )(_) )/(__)\  )(   )__)    / /    )(__)(  )___/( (_-. )   / /(__)\  )(_) ))__) "
+echo " (______)(__)  (____/(__)(__)(__) (____)  (_/    (______)(__)   \___/(_)\_)(__)(__)(____/(____) "
+echo "Ready... I'm going to run "
+echo "  Going to run $ sudo apt update"
+echo "  Going to run $ sudo apt upgrade with -y" 
+echo "----------------------------------------------------"
+echo "Do you wish to run UPDATE and UPGRADE?  Enter y/Y or n/N or any Key?"
+read -p "update and upgrade?: " yesUpdate
+# elif statements
+if [ "$yesUpdate" == "y" ] || [ "$yesUpdate" == "Y" ]
+then
+echo "----------------------------------------------------"
+echo "getting home with cd ~"
+echo "----------------------------------------------------"
+echo " "
+cd ~
+pwd
+echo "----------------------------------------------------"
+echo "Running $ update"
+echo "----------------------------------------------------"
+echo " "
+sudo apt update
+echo " "
+echo "----------------------------------------------------"
+echo "Done running Update"
+echo "----------------------------------------------------"
+echo "----------------------------------------------------"
+echo "Running $ upgrade with -y"
+echo "----------------------------------------------------"
+echo " "
+sudo apt upgrade -y
+echo " "
+echo "----------------------------------------------------"
+echo "Done running Upgrade"
+echo "----------------------------------------------------"
+elif [ "$yesUpdate" == "n" ] || [ "$yesUpdate" == "N" ]
+then
+echo "Skipping this install"
+else
+echo "Any Key - Skipping this install"
+fi
+
 echo "-------------------------------------------------------"
 echo "  ___    __  _  _  ___  "
 echo " (   \  /  \( \( )(  _) "
