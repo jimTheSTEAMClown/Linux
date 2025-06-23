@@ -23,7 +23,8 @@ if [-z "S1" ]; then
   echo "See the instalation instructions, but the usage will be "
   echo "something like this:"
   echo "Usage: $0 https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz"
-  exit 1
+  
+  exit;;
 fi
 HTML_PATH = "$1"
 if [ ! -f "HTML_PATH" ]; then
@@ -35,7 +36,8 @@ if [ ! -f "HTML_PATH" ]; then
   echo " "
   echo "Error: The HTML Path to the TAR File does not exist"
   echo "Error: Path not found at $HTML_PATH"
-  exit 1
+  #exit 1
+  exit;;
 fi
 
 
