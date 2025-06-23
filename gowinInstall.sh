@@ -9,7 +9,7 @@
 # https://www.gnu.org/licenses/gpl-3.0.en.html
 # https://eupl.eu/
 # Program/Design Name:		gowinInstall.sh
-
+#
 # Copy This wget
 # sudo wget -O gowinInstall.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/gowinInstall.sh 
 # ============================================================================
