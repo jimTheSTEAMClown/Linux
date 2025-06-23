@@ -132,36 +132,36 @@ echo "Do you wish to run UPDATE and UPGRADE?  Enter y/Y or n/N or any Key?"
 read -p "update and upgrade?: " yesUpdate
 # elif statements
 if [ "$yesUpdate" == "y" ] || [ "$yesUpdate" == "Y" ]
-then
-echo "----------------------------------------------------"
-echo "getting home with cd ~"
-echo "----------------------------------------------------"
-echo " "
-cd ~
-pwd
-echo "----------------------------------------------------"
-echo "Running $ update"
-echo "----------------------------------------------------"
-echo " "
-sudo apt update
-echo " "
-echo "----------------------------------------------------"
-echo "Done running Update"
-echo "----------------------------------------------------"
-echo "----------------------------------------------------"
-echo "Running $ upgrade with -y"
-echo "----------------------------------------------------"
-echo " "
-sudo apt upgrade -y
-echo " "
-echo "----------------------------------------------------"
-echo "Done running Upgrade"
-echo "----------------------------------------------------"
+    then
+        echo "----------------------------------------------------"
+        echo "getting home with cd ~"
+        echo "----------------------------------------------------"
+        echo " "
+        cd ~
+        pwd
+        echo "----------------------------------------------------"
+        echo "Running $ update"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo apt update
+        echo " "
+        echo "----------------------------------------------------"
+        echo "Done running Update"
+        echo "----------------------------------------------------"
+        echo "----------------------------------------------------"
+        echo "Running $ upgrade with -y"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo apt upgrade -y
+        echo " "
+        echo "----------------------------------------------------"
+        echo "Done running Upgrade"
+        echo "----------------------------------------------------"
 elif [ "$yesUpdate" == "n" ] || [ "$yesUpdate" == "N" ]
-then
-echo "Skipping this install"
+    then
+        echo "Skipping this install"
 else
-echo "Any Key - Skipping this install"
+    echo "Any Key - Skipping this install"
 fi
 
 
@@ -176,8 +176,8 @@ echo "  _)(_  )  ( \__ \  )(  /(__)\  )(__  )(__    /(__)\  )___/ )___/\__ \ "
 echo " (____)(_)\_)(___/ (__)(__)(__)(____)(____)  (__)(__)(__)  (__)  (___/ "
   
 echo "Ready... I'm going to Install the follwoing Apps or Tools "
-echo "  Going to Install Shutter, a screen capture tool"
-echo " $ sudo apt install shutter -y"
+echo "-- Install Shutter, a screen capture tool"
+echo "$ sudo apt install shutter -y"
 
 echo "----------------------------------------------------"
 echo "Do you wish to Install these Apps or Tools UPDATE and UPGRADE?"  
@@ -200,7 +200,7 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         echo "----------------------------------------------------"
         echo " "
         echo "----------------------------------------------------"
-        echo "Done running Apps & Tools Install
+        echo "Done running Apps & Tools Install"
         echo "----------------------------------------------------"
 elif [ "$yesAppsInstall" == "n" ] || [ "$yesAppsInstall" == "N" ]
     then
