@@ -176,37 +176,39 @@ echo "  _)(_  )  ( \__ \  )(  /(__)\  )(__  )(__    /(__)\  )___/ )___/\__ \ "
 echo " (____)(_)\_)(___/ (__)(__)(__)(____)(____)  (__)(__)(__)  (__)  (___/ "
   
 echo "Ready... I'm going to Install the follwoing Apps or Tools "
-echo "  Going to Install Shutter, a screen capture tool - run $ sudo apt install shutter -y"
+echo "  Going to Install Shutter, a screen capture tool"
+echo " $ sudo apt install shutter -y"
 
 echo "----------------------------------------------------"
-echo "Do you wish to Install these Apps or Tools UPDATE and UPGRADE?  Enter y/Y or n/N or any Key?"
+echo "Do you wish to Install these Apps or Tools UPDATE and UPGRADE?"  
+echo "Enter y/Y or n/N or any Key?"
 read -p "Install Apps & Tools?: " yesAppsInstall
 # elif statements
 if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
-then
-echo "----------------------------------------------------"
-echo "getting home with cd ~"
-echo "----------------------------------------------------"
-echo " "
-cd ~
-pwd
-echo "----------------------------------------------------"
-echo "Running $ sudo apt install shutter -y"
-echo "----------------------------------------------------"
-sudo apt install shutter
-echo " "
-echo "----------------------------------------------------"
-echo " "
-echo "----------------------------------------------------"
-echo "Done running Apps & Tools Install
-echo "----------------------------------------------------"
+    then
+        echo "----------------------------------------------------"
+        echo "getting home with cd ~"
+        echo "----------------------------------------------------"
+        echo " "
+        cd ~
+        pwd
+        echo "----------------------------------------------------"
+        echo "Running $ sudo apt install shutter -y"
+        echo "----------------------------------------------------"
+        sudo apt install shutter
+        echo " "
+        echo "----------------------------------------------------"
+        echo " "
+        echo "----------------------------------------------------"
+        echo "Done running Apps & Tools Install
+        echo "----------------------------------------------------"
 elif [ "$yesAppsInstall" == "n" ] || [ "$yesAppsInstall" == "N" ]
-then
-echo "Skipping this install"
-echo "You can install them individually using the following commands: "
-echo "sudo apt install shutter -y"
+    then
+        echo "Skipping this install"
+        echo "You can install them individually using the following commands: "
+        echo "sudo apt install shutter -y"
 else
-echo "Any Key - Skipping this install"
+    echo "Any Key - Skipping this install"
 fi
 
 echo "-------------------------------------------------------"
