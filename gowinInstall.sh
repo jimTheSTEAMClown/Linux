@@ -23,7 +23,6 @@ if [-z "S1" ]; then
   echo "See the instalation instructions, but the usage will be "
   echo "something like this:"
   echo "Usage: $0 https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz"
-  
   exit
 fi
 HTML_PATH = "$1"
@@ -100,11 +99,13 @@ elif [ "$yesBackUpGowin" == "n" ] || [ "$yesBackUpGowin" == "N" ]
         then
             echo "The Directory $USER/gowin exists"
             echo "Exiting this shell scripts"
-            exit;; 
+            # exit;; 
+            exit
     fi
 else
-    echo "Any Key - Skipping This Check For gowin Directory Step""
-    exit;; 
+    echo "Any Key - Skipping This Check For gowin Directory Step"
+    # exit;; 
+    exit
 fi
 
 # https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz
