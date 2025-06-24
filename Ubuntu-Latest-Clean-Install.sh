@@ -177,7 +177,7 @@ echo " (____)(_)\_)(___/ (__)(__)(__)(____)(____)  (__)(__)(__)  (__)  (___/ "
   
 echo "Ready... I'm going to Install the follwoing Apps or Tools "
 echo "-- Install Shutter, a screen capture tool"
-echo "$ sudo apt install shutter -y"
+# echo "$ sudo apt install shutter -y"
 
 echo "----------------------------------------------------"
 echo "Do you wish to Install these Apps or Tools UPDATE and UPGRADE?"  
@@ -193,20 +193,80 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         cd ~
         pwd
         echo "----------------------------------------------------"
-        echo "Running $ sudo apt install shutter -y"
-        echo "----------------------------------------------------"
-        sudo apt install shutter
-        echo " "
+        echo "Installing curl"
+        echo "Running $ sudo apt install curl -y"
         echo "----------------------------------------------------"
         echo " "
+        sudo apt install curl -y
+        echo " "
         echo "----------------------------------------------------"
-        echo "Done running Apps & Tools Install"
+        echo "Installing git"
+        echo "Running $ sudo apt install git -y"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo apt install git -y
+        echo " "
+        echo "----------------------------------------------------"
+        echo "Installing vim"
+        echo "Running $ sudo apt install vim -y"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo apt install vim -y
+        echo " "
+        echo "----------------------------------------------------"
+        echo "Installing thony"
+        echo "Running $ sudo apt install thonny -y"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo apt install thonny -y
+        echo " "
+        echo "----------------------------------------------------"
+        # Might Need To Install SNAP
+        echo "Installing notepad-plus-plus"
+        echo "Running $ sudo snap install notepad-plus-plus"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo snap install notepad-plus-plus
+        echo " "
+        echo "----------------------------------------------------"
+        echo "Installing Arduino"
+        echo "Running $ sudo apt install arduino -y"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo apt install arduino -y
+        echo " "
+        echo "----------------------------------------------------"
+        echo "Installing ssh"
+        echo "Running $ sudo apt install openssh-server -y"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo apt install openssh-server -y
+        # sudo systemctl status ssh # need to figure out how to grep some stdout message, but not stop the script
+        sudo ufw allow ssh
+        echo " "
+        echo "Installing net tools (for ifconfig) "
+        echo "Running $ sudo apt install net-tools -y"
+        echo "----------------------------------------------------"
+        echo " "
+        sudo apt install net-tools -y
+        echo " "
+        echo "----------------------------------------------------"
+        echo "Done running App installs and updates"
+        echo "----------------------------------------------------"
         echo "----------------------------------------------------"
 elif [ "$yesAppsInstall" == "n" ] || [ "$yesAppsInstall" == "N" ]
     then
         echo "Skipping this install"
         echo "You can install them individually using the following commands: "
-        echo "sudo apt install shutter -y"
+        echo "sudo apt install curl -y"
+        echo "sudo apt install git -y"
+        echo "sudo apt install openssh-server -y"
+        echo "sudo apt install net-tools -y"
+        echo "sudo apt install vim -y"
+        echo "sudo apt install thonny -y"
+        echo "sudo snap install notepad-plus-plus"
+        echo "sudo apt install arduino -y"
+        
 else
     echo "Any Key - Skipping this install"
 fi
