@@ -13,6 +13,7 @@
 # Copy This wget
 # sudo wget -O gowinInstall.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/gowinInstall.sh 
 # ============================================================================
+echo "$1"
 if [-z "$1" ]; then
   echo "----------------------------------------------------"
   echo " __  __  ___    __    ___  ____ "
