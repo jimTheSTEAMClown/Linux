@@ -30,7 +30,12 @@ if [ -z "$1" ]; then
 fi
 HTML_PATH="$1"
 echo "$HTML_PATH"
-HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HTML_PATH")
+# Run curl in background and check process status 
+HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HTML_PATH" &) 
+# while this proces is running, echo a "'"
+while kill -0 $! 2>/dev/null; do
+  echo -n "'"
+  sleep 0.5
 echo "$HTTP_STATUS"
 if [ "$HTTP_STATUS" -eq 200 ]; then
   echo "----------------------------------------------------"
