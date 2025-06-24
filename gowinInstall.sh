@@ -77,10 +77,10 @@ read -p "Check & Backup the $USER/gowin Directory In $USER Home?: " yesBackUpGow
 # elif statements
 if [ "$yesBackUpGowin == "y" ] || [ "$yesBackUpGowin" == "Y" ]; then
   echo "----------------------------------------------------"
-    echo "getting home with cd ~"
+    echo "getting home with cd "
     echo "----------------------------------------------------"
     echo " "
-    cd ~
+    cd
     pwd
     ls -l
     echo "----------------------------------------------------"
