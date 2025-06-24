@@ -75,7 +75,7 @@ echo " If it does, do you want to back it up?"
 echo " Enter y/Y or n/N or any Key?"
 read -p "Check & Backup the $USER/gowin Directory In $USER Home?: " yesBackUpGowin
 # elif statements
-if [ "$yesBackUpGowin == "y" ] || [ "$yesBackUpGowin" == "Y" ]; then
+if [ "$yesBackUpGowin" == "y" ] || [ "$yesBackUpGowin" == "Y" ]; then
   echo "----------------------------------------------------"
     echo "getting home with cd "
     echo "----------------------------------------------------"
