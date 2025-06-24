@@ -28,7 +28,12 @@ if [ -z "$1" ]; then
   # return
 fi
 HTML_PATH="$1"
-if [ ! -f "HTML_PATH" ]; then
+HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HTML_PATH")
+if [ "$HTTP_STATUS" -eq 200]; then
+  echo "----------------------------------------------------"
+  echo "HTTP Path exists"
+  echo "----------------------------------------------------"
+else
   echo "----------------------------------------------------"
   echo " _  _  _____    _   _  ____  __  __  __      ____  ____  __    ____ "
   echo " ( \( )(  _  )  ( )_( )(_  _)(  \/  )(  )    ( ___)(_  _)(  )  ( ___) "
