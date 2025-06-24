@@ -1,56 +1,55 @@
 #! /bin/bash
 # ============================================================================
-# shell script to test bash command line
-# Source: STEAM Clown - www.steamclown.org 
-# GitHub: https://github.com/jimTheSTEAMClown/Linux
-# Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
-# This example code is licensed under the CC BY-NC-SA 4.0, GNU GPL and EUPL
-# https://creativecommons.org/licenses/by-nc-sa/4.0/
-# https://www.gnu.org/licenses/gpl-3.0.en.html
-# https://eupl.eu/
-# Program/Design Name:		test.sh
-
-# Copy This wget
-# sudo wget -O test.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/test.sh 
-# ============================================================================
-echo "----------------------------------------------------"
-echo "Ubuntu Test Bash Script Script" 
-echo "----------------------------------------------------"
 echo " "
-pwd
-# ls -l
-ls
-echo " "
-echo "  ____  __  __  _  _  ___      _  _    ___    __         _  _    ___    ___ "   
-echo " (  _ \(  )(  )( \( )(__ )    ( \/ )  (___)  /  )       ( \( )  (___)  (__ \ "  
-echo "  )   / )(__)(  )  (  (_/      \  /    ___    )(         )  (    ___    / _/  " 
-echo " (_)\_)(______)(_)\_) (_)      (__)   (___)  (__)       (_)\_)  (___)  (____)  "
+echo "   ___  _   _  ____  ___  _  _     ___  _____  _    _  ____  _  _ "
+echo "  / __)( )_( )( ___)/ __)( )/ )   / __)(  _  )( \/\/ )(_  _)( \( ) "
+echo " ( (__  ) _ (  )__)( (__  )  (   ( (_-. )(_)(  )    (  _)(_  )  ( "
+echo "  \___)(_) (_)(____)\___)(_)\_)   \___/(_____)(__/\__)(____)(_)\_) "
+echo " Checking If The $USER/gowin Directory Exists "
 echo "----------------------------------------------------"
-echo "Do you wish run the Ubuntu Test Bash Script?"
-echo "----------------------------------------------------"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) 
-            echo "----------------------------------------------------"
-            echo "Running Ubuntu Test Bash Script" 
-            echo "----------------------------------------------------"
-            break;;
-        No ) 
-            echo "----------------------------------------------------"
-            echo "Exiting Without Running" 
-            echo "----------------------------------------------------"
-            exit;;
-    esac
-done
-
-echo "put your commands here.... "
-sudo mkdir -p /home/$USER/gowin
-# https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz
-sudo wget -O /home/$USER/gowin/Gowin_Latest.tar.gz https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz
-cd /home/$USER/gowin
-sudo tar -xvzf Gowin_Latest.tar.gz
-sudo rm Gowin_Latest.tar.gz
-ls -l
-# is there a check to make sure we got the right files installed?
-
-
+echo " Do you wish to check if the gowin directory exists in $USER home?"
+echo " If it does, do you want to back it up?"
+echo " Enter y/Y or n/N or any Key?"
+read -p "Check & Backup the $USER/gowin Directory In $USER Home?: " yesBackUpGowin
+# elif statements
+if [ "$yesBackUpGowin" == "y" ] || [ "$yesBackUpGowin" == "Y" ]; then
+  echo "----------------------------------------------------"
+    echo "getting home with cd "
+    echo "----------------------------------------------------"
+    echo " "
+    cd
+    pwd
+    ls -l
+    echo "----------------------------------------------------"
+    if [ -d "$USER/gowin" ];
+        then
+            echo "The Directory $USER/gowin exists"
+            echo "Creating a backup in $USER/gowinBackUp"
+            sudo mv gowin gowinBackUp 
+    fi
+    # ============================================================================
+    echo " "  
+    echo '   ___  ____  ____    __   ____  ____    ____  ____  ____ '
+    echo '  / __)(  _ \( ___)  /__\ (_  _)( ___)  (  _ \(_  _)(  _ \ '
+    echo ' ( (__  )   / )__)  /(__)\  )(   )__)    )(_) )_)(_  )   / '
+    echo '  \___)(_)\_)(____)(__)(__)(__) (____)  (____/(____)(_)\_) '
+          
+    echo " The $USER/gowin Directory Does Not Exist"
+    echo " Create this gowin directory In $USER/gowin"
+    sudo mkdir -p /home/$USER/gowin
+    echo "----------------------------------------------------"
+elif [ "$yesBackUpGowin" == "n" ] || [ "$yesBackUpGowin" == "N" ]
+    then
+    echo "Skipping This Check For gowin Directory Step"
+    if [ -d "$USER/gowin" ];
+        then
+            echo "The Directory $USER/gowin exists"
+            echo "Exiting this shell scripts"
+            exit 1
+            # return
+    fi
+else
+    echo "Any Key - Skipping This Check For gowin Directory Step"
+    exit 1
+    # return
+fi
