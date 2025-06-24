@@ -98,7 +98,7 @@ if [ "$yesBackUpGowin == "y" ] || [ "$yesBackUpGowin" == "Y" ]; then
     echo '  \___)(_)\_)(____)(__)(__)(__) (____)  (____/(____)(_)\_) '
           
     echo " The $USER/gowin Directory Does Not Exist"
-    echo " Create this gowin directory in $USER/gowin"
+    echo " Create this gowin directory In $USER/gowin"
     sudo mkdir -p /home/$USER/gowin
     echo "----------------------------------------------------"
 elif [ "$yesBackUpGowin" == "n" ] || [ "$yesBackUpGowin" == "N" ]
