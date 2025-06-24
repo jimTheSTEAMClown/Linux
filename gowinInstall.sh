@@ -14,7 +14,7 @@
 # sudo wget -O gowinInstall.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/gowinInstall.sh 
 # ============================================================================
 echo "$1"
-if [-z "$1" ]; then
+if [ -z "$1" ]; then
   echo "----------------------------------------------------"
   echo " __  __  ___    __    ___  ____ "
   echo " (  )(  )/ __)  /__\  / __)( ___) "
@@ -27,7 +27,7 @@ if [-z "$1" ]; then
   exit 1
   # return
 fi
-HTML_PATH = "$1"
+HTML_PATH="$1"
 if [ ! -f "HTML_PATH" ]; then
   echo "----------------------------------------------------"
   echo " _  _  _____    _   _  ____  __  __  __      ____  ____  __    ____ "
