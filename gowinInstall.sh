@@ -26,10 +26,12 @@ if [ -z "$1" ]; then
   echo "Usage: $0 https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz"
   exit 1
   # return
+  echo "Usage is OK"
 fi
 HTML_PATH="$1"
 echo "$HTML_PATH"
 HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HTML_PATH")
+echo "$HTTP_STATUS"
 if [ "$HTTP_STATUS" -eq 200 ]; then
   echo "----------------------------------------------------"
   echo "HTTP Path exists"
