@@ -13,7 +13,7 @@
 # Copy This wget
 # sudo wget -O gowinInstall.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/gowinInstall.sh 
 # ============================================================================
-echo "$1"
+# echo "$1"
 if [ -z "$1" ]; then
   echo "----------------------------------------------------"
   echo " __  __  ___    __    ___  ____ "
@@ -39,9 +39,6 @@ echo "Ubuntu Gowin Linux Tools Install Script"
 echo "----------------------------------------------------"
 echo " "
 echo " Getting ready to install the latest Gowin Tools & Software. "
-echo " The path to the latest tools you provided is the following: "
-echo " $HTML_PATH "
-echo " "
 HTML_PATH="$1"
 echo "Checking URL: $HTML_PATH"
 # Create a temp file to hold the HTTP status
@@ -81,14 +78,13 @@ fi
 echo "----------------------------------------------------"
 echo "The following steps will be proformed:"
 echo " Step #1 - Checking If The /home/$USER/gowin Directory Exists "
-echo "      If it exists, a backup will be made, and a new /home/$USER/gowin "
-echo "      will be created. Then the latest Gowin tools and software will be installed. "
+echo "   If it exists, a backup will be made, and a new /home/$USER/gowin "
+echo "   will be created. Then the latest Gowin tools and software will be installed. "
 echo " Step #2 - A Backup of the current /home/$USER/gowin will be created."
-echo "      as /home/$USER/gowinBackUp"
+echo "   as /home/$USER/gowinBackUp"
 echo " Step #3 - A new /home/$USER/gowin directory will be created."
-echo " Step #4 - the TAR file found at:"
-echo " $HTML_PATH "
-echo "      will be copied. (wget) "
+echo " Step #4 - the following TAR will get copied:"
+echo "   $HTML_PATH "    
 echo " Step #5 - the TAR file Gowin_Latest.tar.gz will be extracted, and then deleted "
 echo "----------------------------------------------------"
 echo " Enter y/Y or n/N or any Key?"
