@@ -84,13 +84,13 @@ echo "  / __)( )_( )( ___)/ __)( )/ )   / __)(  _  )( \/\/ )(_  _)( \( ) "
 echo " ( (__  ) _ (  )__)( (__  )  (   ( (_-. )(_)(  )    (  _)(_  )  ( "
 echo "  \___)(_) (_)(____)\___)(_)\_)   \___/(_____)(__/\__)(____)(_)\_) "
 echo " Checking If The /home/$USER/gowin Directory Exists "
+echo " If it exists, a backup will be made, and a new /home/$USER/gowin "
+echo " will be created. Then the latest Gowin tools and software will be installed. "
 echo "----------------------------------------------------"
-echo " Do you wish to check if the gowin directory exists in $USER home?"
-echo " If it does, do you want to back it up?"
 echo " Enter y/Y or n/N or any Key?"
-read -p "Check & Backup the /home/$USER/gowin Directory In $USER Home?: " yesBackUpGowin
+read -p "Check gowin Dir, create Backup & Copy Latest Gowin release in /home/$USER/gowin?: " yesBackUpInstallGowin
 # elif statements
-if [ "$yesBackUpGowin" == "y" ] || [ "$yesBackUpGowin" == "Y" ]; then
+if [ "$yesBackUpInstallGowin" == "y" ] || [ "$yesBackUpInstallGowin" == "Y" ]; then
   echo "----------------------------------------------------"
     echo "getting home with cd "
     echo "----------------------------------------------------"
@@ -103,20 +103,13 @@ if [ "$yesBackUpGowin" == "y" ] || [ "$yesBackUpGowin" == "Y" ]; then
         then
             echo "The Directory /home/$USER/gowin exists"
             echo "Creating a backup in /home/$USER/gowinBackUp"
-            sudo mv /home$USER/gowin /home/$USER/gowinBackUp 
+            sudo mv /home/$USER/gowin /home/$USER/gowinBackUp 
     fi
-    # ============================================================================
-    echo " "  
-    echo '   ___  ____  ____    __   ____  ____    ____  ____  ____ '
-    echo '  / __)(  _ \( ___)  /__\ (_  _)( ___)  (  _ \(_  _)(  _ \ '
-    echo ' ( (__  )   / )__)  /(__)\  )(   )__)    )(_) )_)(_  )   / '
-    echo '  \___)(_)\_)(____)(__)(__)(__) (____)  (____/(____)(_)\_) '
-          
     echo " The /home/$USER/gowin Directory Does Not Exist"
     echo " Create this gowin directory In /home/$USER/gowin"
     sudo mkdir -p /home/$USER/gowin
     echo "----------------------------------------------------"
-elif [ "$yesBackUpGowin" == "n" ] || [ "$yesBackUpGowin" == "N" ]
+elif [ "$yesBackUpInstallGowin" == "n" ] || [ "$yesBackUpInstallGowin" == "N" ]
     then
     echo "Skipping This Check For gowin Directory Step"
     if [ -d "/home/$USER/gowin" ];
