@@ -29,7 +29,7 @@ if [ -z "$1" ]; then
   echo "Usage is OK"
 fi
 HTML_PATH="$1"
-echo "$HTML_PATH"
+echo "Checking URL: $HTML_PATH"
 # Run curl in background and check process status 
 HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HTML_PATH" &) 
 # while this proces is running, echo a "'"
