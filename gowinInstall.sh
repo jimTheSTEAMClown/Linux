@@ -100,7 +100,7 @@ if [ "$yesBackUpInstallGowin" == "y" ] || [ "$yesBackUpInstallGowin" == "Y" ]; t
           BACKUP_DIR="gowinBackUp_$(date +%Y%m%d_%H%M%S)"
           echo "The Directory /home/$USER/gowin exists"
           echo "Creating a backup in /home/$USER/$BACKUP_DIR"
-          sudo mv /home/$USER/gowin /home/$USER/$BACKUP_DIR) 
+          sudo mv /home/$USER/gowin /home/$USER/$BACKUP_DIR 
   fi
   echo " Creating a new /home/$USER/gowin Directory."
   sudo mkdir -p /home/$USER/gowin
