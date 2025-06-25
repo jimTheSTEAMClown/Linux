@@ -20,13 +20,11 @@ if [ -z "$1" ]; then
   echo " (  )(  )/ __)  /__\  / __)( ___) "
   echo "  )(__)( \__ \ /(__)\( (_-. )__) "
   echo " (______)(___/(__)(__)\___/(____) " 
-  echo "Please provide the HTML link to the gowan Linux TAR File"
-  echo "See the instalation instructions, but the usage will be "
-  echo "something like this:"
-  echo "Usage: $0 https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz"
+  echo " Please provide the HTML link to the gowan Linux TAR File"
+  echo " See the instalation instructions, but the usage will be "
+  echo " something like this:"
+  echo " Usage: $0 https://cdn.gowinsemi.com.cn/Gowin_V1.9.11.01_Education_Linux.tar.gz"
   exit 1
-  # return
-  echo "Usage is OK"
 fi
 
 # ============================================================================
@@ -35,12 +33,12 @@ echo " (  _ \(  )(  )( \( )   / __)(  _  )( \/\/ )(_  _)( \( )  (_  _)( \( )/ __
 echo "  )   / )(__)(  )  (   ( (_-. )(_)(  )    (  _)(_  )  (    _)(_  )  ( \__ \  )(  /(__)\  )(__  )(__ "
 echo " (_)\_)(______)(_)\_)   \___/(_____)(__/\__)(____)(_)\_)  (____)(_)\_)(___/ (__)(__)(__)(____)(____) "
 echo "----------------------------------------------------"
-echo "Ubuntu Gowin Linux Tools Install Script - Created by STEAM Clown - www.STEAMClown.org" 
+echo " Ubuntu Gowin Linux Tools Install Script - Created by STEAM Clown - www.STEAMClown.org" 
 echo "----------------------------------------------------"
 echo " "
-echo "Getting ready to install the latest Gowin Tools & Software. "
+echo " Getting ready to install the latest Gowin Tools & Software. "
 HTML_PATH="$1"
-echo "Checking URL: $HTML_PATH"
+echo  " Checking URL: $HTML_PATH"
 # Create a temp file to hold the HTTP status
 TMP_HTTP_STATUS=$(mktemp)
 
@@ -49,7 +47,7 @@ curl -s -o /dev/null -w "%{http_code}" "$HTML_PATH" > "$TMP_HTTP_STATUS" &
 CURL_PID=$!
 
 # Spinner while curl runs
-echo -n "Connecting"
+echo -n " Connecting "
 while kill -0 $CURL_PID 2>/dev/null; do
   echo -n "."
   sleep 0.3
@@ -60,23 +58,23 @@ echo ""
 HTTP_STATUS=$(cat "$TMP_HTTP_STATUS")
 rm "$TMP_HTTP_STATUS"  # clean up temp file
 
-echo "$HTTP_STATUS"
 if [ "$HTTP_STATUS" -eq 200 ]; then
   echo "----------------------------------------------------"
-  echo "✅ - HTTP Path exists"
+  echo " ✅ - HTTP Path exists"
+  echo " HTTP Status code = $HTTP_STATUS"
   echo "----------------------------------------------------"
 else
   echo "----------------------------------------------------"
-  echo "❌ - Error: The HTML Path to the TAR File does not exist"
-  echo "❌ - Error: Path not found at $HTML_PATH"
-  echo "Status code: $HTTP_STATUS"
-  echo "URL: $HTML_PATH"
+  echo " ❌ - Error: The HTML Path to the TAR File does not exist"
+  echo " ❌ - Error: Path not found at $HTML_PATH"
+  echo " HTTP Status code: $HTTP_STATUS"
+  echo " URL: $HTML_PATH"
   echo "----------------------------------------------------"
   exit 1
 fi
 
 echo "----------------------------------------------------"
-echo "The following steps will be proformed:"
+echo " The following steps will be proformed:"
 echo " Step #1 - Checking If The /home/$USER/gowin Directory Exists "
 echo "   If it exists, a backup will be made, and a new /home/$USER/gowin "
 echo "   will be created. Then the latest Gowin tools and software will be installed "
@@ -88,8 +86,8 @@ echo "   From: $HTML_PATH "
 echo "   To: Gowin_Latest.tar.gz in /home/$USER/gowin "
 echo " Step #5 - the TAR file Gowin_Latest.tar.gz will be extracted, and then deleted "
 echo "----------------------------------------------------"
-echo " Enter y/Y or n/N or any Key?"
-read -p "Install Latest Gowin release in /home/$USER/gowin?: " yesBackUpInstallGowin
+echo " Enter y/Y or n/N or Any Other Key to Quit"
+read -p " Install Latest Gowin release in /home/$USER/gowin?: " yesBackUpInstallGowin
 # elif statements
 if [ "$yesBackUpInstallGowin" == "y" ] || [ "$yesBackUpInstallGowin" == "Y" ]; then
   echo "----------------------------------------------------"
@@ -117,7 +115,7 @@ elif [ "$yesBackUpInstallGowin" == "n" ] || [ "$yesBackUpInstallGowin" == "N" ]
             # return
     fi
 else
-    echo "Any Key - Skipping This Check For gowin Directory Step"
+    echo " Any Key - Skipping This Check For gowin Directory Step"
     exit 1
     # return
 fi
