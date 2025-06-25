@@ -28,6 +28,20 @@ if [ -z "$1" ]; then
   # return
   echo "Usage is OK"
 fi
+
+# ============================================================================
+echo "  ____  __  __  _  _     ___  _____  _    _  ____  _  _    ____  _  _  ___  ____   __    __    __ "
+echo " (  _ \(  )(  )( \( )   / __)(  _  )( \/\/ )(_  _)( \( )  (_  _)( \( )/ __)(_  _) /__\  (  )  (  ) "
+echo "  )   / )(__)(  )  (   ( (_-. )(_)(  )    (  _)(_  )  (    _)(_  )  ( \__ \  )(  /(__)\  )(__  )(__ "
+echo " (_)\_)(______)(_)\_)   \___/(_____)(__/\__)(____)(_)\_)  (____)(_)\_)(___/ (__)(__)(__)(____)(____) "
+echo "----------------------------------------------------"
+echo "Ubuntu Gowin Linux Tools Install Script" 
+echo "----------------------------------------------------"
+echo " "
+echo " Getting ready to install the latest Gowin Tools & Software. "
+echo " The path to the latest tools you provided is the following: "
+echo " $HTML_PATH "
+echo " "
 HTML_PATH="$1"
 echo "Checking URL: $HTML_PATH"
 # Create a temp file to hold the HTTP status
@@ -64,19 +78,6 @@ else
   exit 1
 fi
 
-
-echo "  ____  __  __  _  _     ___  _____  _    _  ____  _  _    ____  _  _  ___  ____   __    __    __ "
-echo " (  _ \(  )(  )( \( )   / __)(  _  )( \/\/ )(_  _)( \( )  (_  _)( \( )/ __)(_  _) /__\  (  )  (  ) "
-echo "  )   / )(__)(  )  (   ( (_-. )(_)(  )    (  _)(_  )  (    _)(_  )  ( \__ \  )(  /(__)\  )(__  )(__ "
-echo " (_)\_)(______)(_)\_)   \___/(_____)(__/\__)(____)(_)\_)  (____)(_)\_)(___/ (__)(__)(__)(____)(____) "
-echo "----------------------------------------------------"
-echo "Ubuntu Gowin Linux Tools Install Script" 
-echo "----------------------------------------------------"
-echo " "
-echo " Getting ready to install the latest Gowin Tools & Software. "
-echo " The path to the latest tools you provided is the following: "
-echo " $HTML_PATH "
-echo " "
 echo "----------------------------------------------------"
 echo "The following steps will be proformed:"
 echo " Step #1 - Checking If The /home/$USER/gowin Directory Exists "
