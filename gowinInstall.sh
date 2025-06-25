@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 # ============================================================================
 # shell script to test bash command line
 # Source: STEAM Clown - www.steamclown.org 
@@ -35,7 +35,7 @@ echo " (  _ \(  )(  )( \( )   / __)(  _  )( \/\/ )(_  _)( \( )  (_  _)( \( )/ __
 echo "  )   / )(__)(  )  (   ( (_-. )(_)(  )    (  _)(_  )  (    _)(_  )  ( \__ \  )(  /(__)\  )(__  )(__ "
 echo " (_)\_)(______)(_)\_)   \___/(_____)(__/\__)(____)(_)\_)  (____)(_)\_)(___/ (__)(__)(__)(____)(____) "
 echo "----------------------------------------------------"
-echo "Ubuntu Gowin Linux Tools Install Script" 
+echo "Ubuntu Gowin Linux Tools Install Script - Created by STEAM Clown - www.STEAMClown.org" 
 echo "----------------------------------------------------"
 echo " "
 echo " Getting ready to install the latest Gowin Tools & Software. "
