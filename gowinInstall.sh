@@ -83,32 +83,39 @@ echo "   ___  _   _  ____  ___  _  _     ___  _____  _    _  ____  _  _ "
 echo "  / __)( )_( )( ___)/ __)( )/ )   / __)(  _  )( \/\/ )(_  _)( \( ) "
 echo " ( (__  ) _ (  )__)( (__  )  (   ( (_-. )(_)(  )    (  _)(_  )  ( "
 echo "  \___)(_) (_)(____)\___)(_)\_)   \___/(_____)(__/\__)(____)(_)\_) "
-echo " Checking If The /home/$USER/gowin Directory Exists "
-echo " If it exists, a backup will be made, and a new /home/$USER/gowin "
-echo " will be created. Then the latest Gowin tools and software will be installed. "
+echo " Getting ready to install the latest Gowin Tools & Software. "
+echo " The path to the latest tools you provided is the following: "
+echo " $HTML_PATH "
+echo " "
+echo "----------------------------------------------------"
+echo "The following steps will be proformed:"
+echo " Step #1 - Checking If The /home/$USER/gowin Directory Exists "
+echo "      If it exists, a backup will be made, and a new /home/$USER/gowin "
+echo "      will be created. Then the latest Gowin tools and software will be installed. "
+echo " Step #2 - A Backup of the current /home/$USER/gowin will be created."
+echo "      as /home/$USER/gowinBackUp"
+echo " Step #3 - A new /home/$USER/gowin directory will be created."
+echo " Step #4 - the TAR file found at $HTML_PATH wull be copied. (wget) "
+echo " Step #5 - the TAR file Gowin_Latest.tar.gz will be extracted, and then deleted "
 echo "----------------------------------------------------"
 echo " Enter y/Y or n/N or any Key?"
-read -p "Check gowin Dir, create Backup & Copy Latest Gowin release in /home/$USER/gowin?: " yesBackUpInstallGowin
+read -p "Install Latest Gowin release in /home/$USER/gowin?: " yesBackUpInstallGowin
 # elif statements
 if [ "$yesBackUpInstallGowin" == "y" ] || [ "$yesBackUpInstallGowin" == "Y" ]; then
   echo "----------------------------------------------------"
-    echo "getting home with cd "
-    echo "----------------------------------------------------"
-    echo " "
-    cd
-    pwd
-    ls -l
-    echo "----------------------------------------------------"
-    if [ -d "/home/$USER/gowin" ];
-        then
-            echo "The Directory /home/$USER/gowin exists"
-            echo "Creating a backup in /home/$USER/gowinBackUp"
-            sudo mv /home/$USER/gowin /home/$USER/gowinBackUp 
-    fi
-    echo " The /home/$USER/gowin Directory Does Not Exist"
-    echo " Create this gowin directory In /home/$USER/gowin"
-    sudo mkdir -p /home/$USER/gowin
-    echo "----------------------------------------------------"
+  echo "cd to $USER "
+  cd
+  pwd
+  echo "----------------------------------------------------"
+  if [ -d "/home/$USER/gowin" ];
+      then
+          echo "The Directory /home/$USER/gowin exists"
+          echo "Creating a backup in /home/$USER/gowinBackUp"
+          sudo mv /home/$USER/gowin /home/$USER/gowinBackUp 
+  fi
+  echo " Creating a new /home/$USER/gowin Directory."
+  sudo mkdir -p /home/$USER/gowin
+  echo "----------------------------------------------------"
 elif [ "$yesBackUpInstallGowin" == "n" ] || [ "$yesBackUpInstallGowin" == "N" ]
     then
     echo "Skipping This Check For gowin Directory Step"
@@ -132,3 +139,19 @@ sudo tar -xvzf Gowin_Latest.tar.gz
 sudo rm Gowin_Latest.tar.gz
 ls -l
 # is there a check to make sure we got the right files installed?
+cd
+echo '  ____  _____  _  _  ____ '
+echo ' (  _ \(  _  )( \( )( ___) '
+echo '  )(_) ))(_)(  )  (  )__) '
+echo ' (____/(_____)(_)\_)(____) '
+echo "----------------------------------------------------"
+echo " "
+echo "----------------------------------------------------"
+echo '  _  _  ____  _  _  ____    ___  ____  ____  ____  ___ '
+echo ' ( \( )( ___)( \/ )(_  _)  / __)(_  _)( ___)(  _ \/ __) '
+echo '  )  (  )__)  )  (   )(    \__ \  )(   )__)  )___/\__ \ '
+echo ' (_)\_)(____)(_/\_) (__)   (___/ (__) (____)(__)  (___/ '
+echo "----------------------------------------------------"
+echo " "
+echo "----------------------------------------------------"
+                                                      
