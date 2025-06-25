@@ -73,16 +73,6 @@ echo "----------------------------------------------------"
 echo "Ubuntu Gowin Linux Tools Install Script" 
 echo "----------------------------------------------------"
 echo " "
-cd $USER
-pwd
-ls -l
-echo "----------------------------------------------------"
-# ============================================================================
-echo " "
-echo "   ___  _   _  ____  ___  _  _     ___  _____  _    _  ____  _  _ "
-echo "  / __)( )_( )( ___)/ __)( )/ )   / __)(  _  )( \/\/ )(_  _)( \( ) "
-echo " ( (__  ) _ (  )__)( (__  )  (   ( (_-. )(_)(  )    (  _)(_  )  ( "
-echo "  \___)(_) (_)(____)\___)(_)\_)   \___/(_____)(__/\__)(____)(_)\_) "
 echo " Getting ready to install the latest Gowin Tools & Software. "
 echo " The path to the latest tools you provided is the following: "
 echo " $HTML_PATH "
@@ -95,7 +85,9 @@ echo "      will be created. Then the latest Gowin tools and software will be in
 echo " Step #2 - A Backup of the current /home/$USER/gowin will be created."
 echo "      as /home/$USER/gowinBackUp"
 echo " Step #3 - A new /home/$USER/gowin directory will be created."
-echo " Step #4 - the TAR file found at $HTML_PATH wull be copied. (wget) "
+echo " Step #4 - the TAR file found at:"
+echo " $HTML_PATH "
+echo "      will be copied. (wget) "
 echo " Step #5 - the TAR file Gowin_Latest.tar.gz will be extracted, and then deleted "
 echo "----------------------------------------------------"
 echo " Enter y/Y or n/N or any Key?"
@@ -103,7 +95,7 @@ read -p "Install Latest Gowin release in /home/$USER/gowin?: " yesBackUpInstallG
 # elif statements
 if [ "$yesBackUpInstallGowin" == "y" ] || [ "$yesBackUpInstallGowin" == "Y" ]; then
   echo "----------------------------------------------------"
-  echo "cd to $USER "
+  echo "cd to /home/$USER "
   cd
   pwd
   echo "----------------------------------------------------"
