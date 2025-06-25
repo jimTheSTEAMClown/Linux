@@ -30,28 +30,38 @@ if [ -z "$1" ]; then
 fi
 HTML_PATH="$1"
 echo "Checking URL: $HTML_PATH"
-# Run curl in background and check process status 
-HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HTML_PATH" &) 
-# while this proces is running, echo a "'"
-while kill -0 $! 2>/dev/null; do
-  echo -n "'"
-  sleep 0.5
+# Create a temp file to hold the HTTP status
+TMP_HTTP_STATUS=$(mktemp)
+
+# Run curl in background and write status to temp file
+curl -s -o /dev/null -w "%{http_code}" "$HTML_PATH" > "$TMP_HTTP_STATUS" &
+CURL_PID=$!
+
+# Spinner while curl runs
+echo -n "Connecting"
+while kill -0 $CURL_PID 2>/dev/null; do
+  echo -n "."
+  sleep 0.3
+done
+echo ""
+
+# Read the result
+HTTP_STATUS=$(cat "$TMP_HTTP_STATUS")
+rm "$TMP_HTTP_STATUS"  # clean up temp file
+
 echo "$HTTP_STATUS"
 if [ "$HTTP_STATUS" -eq 200 ]; then
   echo "----------------------------------------------------"
-  echo "HTTP Path exists"
+  echo "✅ - HTTP Path exists"
   echo "----------------------------------------------------"
 else
   echo "----------------------------------------------------"
-  echo " _  _  _____    _   _  ____  __  __  __      ____  ____  __    ____ "
-  echo " ( \( )(  _  )  ( )_( )(_  _)(  \/  )(  )    ( ___)(_  _)(  )  ( ___) "
-  echo " )  (  )(_)(    ) _ (   )(   )    (  )(__    )__)  _)(_  )(__  )__) "
-  echo " (_)\_)(_____)  (_) (_) (__) (_/\/\_)(____)  (__)  (____)(____)(____) "
-  echo " "
-  echo "Error: The HTML Path to the TAR File does not exist"
-  echo "Error: Path not found at $HTML_PATH"
+  echo "❌ - Error: The HTML Path to the TAR File does not exist"
+  echo "❌ - Error: Path not found at $HTML_PATH"
+  echo "Status code: $HTTP_STATUS"
+  echo "URL: $HTML_PATH"
+  echo "----------------------------------------------------"
   exit 1
-  # return
 fi
 
 
