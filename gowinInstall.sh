@@ -97,9 +97,10 @@ if [ "$yesBackUpInstallGowin" == "y" ] || [ "$yesBackUpInstallGowin" == "Y" ]; t
   echo "----------------------------------------------------"
   if [ -d "/home/$USER/gowin" ];
       then
+          BACKUP_DIR="gowinBackUp_$(date +%Y%m%d_%H%M%S)"
           echo "The Directory /home/$USER/gowin exists"
-          echo "Creating a backup in /home/$USER/gowinBackUp_$(date +%Y%m%d_%H%M%S)"
-          sudo mv /home/$USER/gowin /home/$USER/gowinBackUp_$(date +%Y%m%d_%H%M%S) 
+          echo "Creating a backup in /home/$USER/$BACKUP_DIR"
+          sudo mv /home/$USER/gowin /home/$USER/$BACKUP_DIR) 
   fi
   echo " Creating a new /home/$USER/gowin Directory."
   sudo mkdir -p /home/$USER/gowin
@@ -129,6 +130,7 @@ ls -l
 # is there a check to make sure we got the right files installed?
 cd
 sudo chown -R "$USER:$USER" /home/$USER/gowin
+sudo chown -R "$USER:$USER" /home/$USER/$BACKUP_DIR
 echo '  ____  _____  _  _  ____ '
 echo ' (  _ \(  _  )( \( )( ___) '
 echo '  )(_) ))(_)(  )  (  )__) '
