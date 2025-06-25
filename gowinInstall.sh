@@ -38,7 +38,7 @@ echo "----------------------------------------------------"
 echo "Ubuntu Gowin Linux Tools Install Script - Created by STEAM Clown - www.STEAMClown.org" 
 echo "----------------------------------------------------"
 echo " "
-echo " Getting ready to install the latest Gowin Tools & Software. "
+echo "Getting ready to install the latest Gowin Tools & Software. "
 HTML_PATH="$1"
 echo "Checking URL: $HTML_PATH"
 # Create a temp file to hold the HTTP status
