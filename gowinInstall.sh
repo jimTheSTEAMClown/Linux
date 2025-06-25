@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # ============================================================================
 # shell script to test bash command line
 # Source: STEAM Clown - www.steamclown.org 
@@ -102,8 +102,8 @@ if [ "$yesBackUpInstallGowin" == "y" ] || [ "$yesBackUpInstallGowin" == "Y" ]; t
   if [ -d "/home/$USER/gowin" ];
       then
           echo "The Directory /home/$USER/gowin exists"
-          echo "Creating a backup in /home/$USER/gowinBackUp"
-          sudo mv /home/$USER/gowin /home/$USER/gowinBackUp 
+          echo "Creating a backup in /home/$USER/gowinBackUp_$(date +%Y%m%d_%H%M%S)"
+          sudo mv /home/$USER/gowin /home/$USER/gowinBackUp_$(date +%Y%m%d_%H%M%S) 
   fi
   echo " Creating a new /home/$USER/gowin Directory."
   sudo mkdir -p /home/$USER/gowin
@@ -132,6 +132,7 @@ sudo rm Gowin_Latest.tar.gz
 ls -l
 # is there a check to make sure we got the right files installed?
 cd
+sudo chown -R "$USER:$USER" /home/$USER/gowin
 echo '  ____  _____  _  _  ____ '
 echo ' (  _ \(  _  )( \( )( ___) '
 echo '  )(_) ))(_)(  )  (  )__) '
