@@ -21,7 +21,7 @@ echo '  \  / \__ \  ( (__  )(_)(  )(_) ))__)  '
 echo '   \/  (___/   \___)(_____)(____/(____) '
 
 echo "----------------------------------------------------"
-echo "Do you wish run the Ubuntu Class Image Update?"
+echo "VS Code Verification, Remove & Install Update?"
 echo "----------------------------------------------------"
 select yn in "Check_Version" "Remove_VS_Code" "Install_VS_Code" "Quit"; do
     case $yn in
