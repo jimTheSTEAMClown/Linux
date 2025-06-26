@@ -255,49 +255,29 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         
         echo "----------------------------------------------------"
         echo "Installing Latests AMD64 Linux DEB VS Code"
-        # Install dependencies for HTTPS and apt repository handling
-        # sudo apt install wget gpg apt-transport-https software-properties-common -y
-        # Import the Microsoft GPG key
-        # wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-        # sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-        # Enable the Visual Studio Code APT repository
-        # sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-        # Update package lists again to include the new VS Code repo
-        # sudo apt update
-        # Install Visual Studio Code
-        # sudo apt install code -y
-        # ✅ Check Installation
-        # Run this command to verify the install:
-        # code --version
-        echo "----------------------------------------------------"
-        echo " "
-        echo " Install dependencies for HTTPS and apt repository handling "
+        echo "Cleaning up any conflicting Microsoft GPG keys..."
+        sudo rm -f /etc/apt/trusted.gpg.d/packages.microsoft.gpg
+        
+        echo "Install dependencies for HTTPS and apt repository handling"
         sudo apt install wget gpg apt-transport-https software-properties-common -y
         
-        echo " Import the Microsoft GPG key"
-        # wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+        echo "Import the Microsoft GPG key"
         wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
-        # sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
         
-        echo " Enable the Visual Studio Code APT repository"
-        # sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+        echo "Enable the Visual Studio Code APT repository"
         echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
-        echo " Update package lists again to include the new VS Code repo "
+        
+        echo "Update package lists again to include the new VS Code repo"
         sudo apt update
-        # E: Conflicting values set for option Signed-By regarding source https://packages.microsoft.com/repos/code/ stable: /etc/apt/trusted.gpg.d/packages.microsoft.gpg != /usr/share/keyrings/microsoft.gpg
-        # E: The list of sources could not be read.
         
-        echo " Install Visual Studio Code"
-        # sudo apt install code -y
-        # ✅ Check Installation
-        # Run this command to verify the install:
+        echo "Install Visual Studio Code"
+        sudo apt install code -y
+        
+        echo "Check VS Code version"
         code --version
-
-
-        
+                   
         echo " "
         echo "----------------------------------------------------"
-        # https://code.visualstudio.com/Download#
         # https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         
         echo "Done running App installs and updates"
