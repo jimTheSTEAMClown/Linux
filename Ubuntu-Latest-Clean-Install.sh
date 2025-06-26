@@ -271,7 +271,29 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         #echo "Running $ sudo apt install arduino -y"
         echo "----------------------------------------------------"
         echo " "
-        #sudo apt install arduino -y
+        echo " Install dependencies for HTTPS and apt repository handling "
+        sudo apt install wget gpg apt-transport-https software-properties-common -y
+        
+        echo " Import the Microsoft GPG key"
+        wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+        sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+        
+        echo " Enable the Visual Studio Code APT repository"
+        sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+        
+        echo " Update package lists again to include the new VS Code repo "
+        sudo apt update
+        # E: Conflicting values set for option Signed-By regarding source https://packages.microsoft.com/repos/code/ stable: /etc/apt/trusted.gpg.d/packages.microsoft.gpg != /usr/share/keyrings/microsoft.gpg
+        # E: The list of sources could not be read.
+
+        echo " Install Visual Studio Code"
+        # sudo apt install code -y
+        # ✅ Check Installation
+        # Run this command to verify the install:
+        # code --version
+
+
+        
         echo " "
         echo "----------------------------------------------------"
         # https://code.visualstudio.com/Download#
