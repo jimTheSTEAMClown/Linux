@@ -9,6 +9,12 @@
 #   ./install-vscode.sh
 # ============================================================================
 # wget sudo wget -O vs-Install.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/refs/heads/master/install-vscode.sh
+# Stuff to add:
+# 1) test for latest vs code build 
+# curl -s https://update.code.visualstudio.com/api/update/darwin/stable/latest | grep -oP '"version":"\K[^"]+'
+#
+# 2) add option to check for latest, remove current build, install new.
+
 echo "==================================================="
 echo "  Visual Studio Code Installation Script for Ubuntu"
 echo "==================================================="
