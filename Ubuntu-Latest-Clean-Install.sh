@@ -252,6 +252,21 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         echo " "
         echo "----------------------------------------------------"
         echo "Installing Latests AMD64 Linux DEB VS Code"
+        # Install dependencies for HTTPS and apt repository handling
+        # sudo apt install wget gpg apt-transport-https software-properties-common -y
+        # Import the Microsoft GPG key
+        # wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+        # sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+        # Enable the Visual Studio Code APT repository
+        # sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+        # Update package lists again to include the new VS Code repo
+        # sudo apt update
+        # Install Visual Studio Code
+        # sudo apt install code -y
+        # ✅ Check Installation
+        # Run this command to verify the install:
+        # code --version
+        
         #echo "Running $ sudo apt install arduino -y"
         echo "----------------------------------------------------"
         echo " "
