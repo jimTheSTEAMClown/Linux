@@ -15,6 +15,46 @@
 #
 # 2) add option to check for latest, remove current build, install new.
 
+echo '  _  _  ___     ___  _____  ____  ____    ____  _  _  ___  ____   __    __    __   '
+echo ' ( \/ )/ __)   / __)(  _  )(  _ \( ___)  (_  _)( \( )/ __)(_  _) /__\  (  )  (  )  '
+echo '  \  / \__ \  ( (__  )(_)(  )(_) ))__)    _)(_  )  ( \__ \  )(  /(__)\  )(__  )(__  '
+echo '   \/  (___/   \___)(_____)(____/(____)  (____)(_)\_)(___/ (__)(__)(__)(____)(____)  '
+
+echo "----------------------------------------------------"
+echo "Do you wish run the Ubuntu Class Image Update?"
+echo "----------------------------------------------------"
+select yn in "Check_Version" "Remove_VS_Code" "Install_VS_Code" "Quit"; do
+    case $yn in
+        Check_Version ) 
+            echo "----------------------------------------------------"
+            echo "Running VS Code vesrion Check"
+            echo "Installed Version..."
+            code --version
+            echo "Latest Build..."
+            curl -s https://update.code.visualstudio.com/api/update/darwin/stable/latest | grep -oP '"version":"\K[^"]+'
+            echo "----------------------------------------------------"
+            break;;
+        Remove_VS_Code ) 
+            echo "----------------------------------------------------"
+            echo "Remove VS Code" 
+            echo "----------------------------------------------------"
+            break;;
+        Install_VS_Code ) 
+            echo "----------------------------------------------------"
+            echo "EInstall VS Code" 
+            echo "----------------------------------------------------"
+            break;;
+        Quit ) 
+            echo "----------------------------------------------------"
+            echo "Exiting Without Update" 
+            echo "----------------------------------------------------"
+            exit;;
+    esac
+done
+
+echo "Did It"
+exit;;
+
 echo "==================================================="
 echo "  Visual Studio Code Installation Script for Ubuntu"
 echo "==================================================="
