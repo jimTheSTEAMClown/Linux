@@ -251,6 +251,15 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         sudo apt install net-tools -y
         echo " "
         echo "----------------------------------------------------"
+        echo "Installing Latests AMD64 Linux DEB VS Code"
+        #echo "Running $ sudo apt install arduino -y"
+        echo "----------------------------------------------------"
+        echo " "
+        #sudo apt install arduino -y
+        echo " "
+        echo "----------------------------------------------------"
+        # https://code.visualstudio.com/Download#
+        # https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         echo "Done running App installs and updates"
         echo "----------------------------------------------------"
         echo "----------------------------------------------------"
