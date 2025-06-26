@@ -286,6 +286,27 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         # E: Conflicting values set for option Signed-By regarding source https://packages.microsoft.com/repos/code/ stable: /etc/apt/trusted.gpg.d/packages.microsoft.gpg != /usr/share/keyrings/microsoft.gpg
         # E: The list of sources could not be read.
 
+sudo apt install wget gpg apt-transport-https software-properties-common -y
+3. Import Microsoft GPG key and add it to trusted keyring
+bash
+Copy
+Edit
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
+4. Add the VS Code APT repository using the keyring
+bash
+Copy
+Edit
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+5. Update the package index again
+bash
+Copy
+Edit
+sudo apt update
+6. Install Visual Studio Code
+bash
+Copy
+Edit
+sudo apt install code -y
         echo " Install Visual Studio Code"
         # sudo apt install code -y
         # ✅ Check Installation
