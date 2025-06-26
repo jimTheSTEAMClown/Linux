@@ -8,7 +8,7 @@
 #   chmod +x install-vscode.sh
 #   ./install-vscode.sh
 # ============================================================================
-
+# wget sudo wget -O vs-Install.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/refs/heads/master/test.sh
 echo "==================================================="
 echo "  Visual Studio Code Installation Script for Ubuntu"
 echo "==================================================="
