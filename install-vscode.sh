@@ -53,7 +53,7 @@ select yn in "Check_Version" "Remove_VS_Code" "Install_VS_Code" "Quit"; do
 done
 
 echo "Did It"
-exit;;
+exit -1
 
 echo "==================================================="
 echo "  Visual Studio Code Installation Script for Ubuntu"
