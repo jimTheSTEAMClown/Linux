@@ -48,7 +48,7 @@ select yn in "Check_Version" "Remove_VS_Code" "Install_VS_Code" "Quit"; do
             echo "----------------------------------------------------"
             echo "Exiting Without Update" 
             echo "----------------------------------------------------"
-            exit;;
+            break;;
     esac
 done
 
