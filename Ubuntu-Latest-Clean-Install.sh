@@ -245,12 +245,14 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         # sudo systemctl status ssh # need to figure out how to grep some stdout message, but not stop the script
         sudo ufw allow ssh
         echo " "
+        
         echo "Installing net tools (for ifconfig) "
         echo "Running $ sudo apt install net-tools -y"
         echo "----------------------------------------------------"
         echo " "
         sudo apt install net-tools -y
         echo " "
+        
         echo "----------------------------------------------------"
         echo "Installing Latests AMD64 Linux DEB VS Code"
         # Install dependencies for HTTPS and apt repository handling
@@ -267,51 +269,29 @@ if [ "$yesAppsInstall" == "y" ] || [ "$yesAppsInstall" == "Y" ]
         # ✅ Check Installation
         # Run this command to verify the install:
         # code --version
-        
-        #echo "Running $ sudo apt install arduino -y"
         echo "----------------------------------------------------"
         echo " "
         echo " Install dependencies for HTTPS and apt repository handling "
         sudo apt install wget gpg apt-transport-https software-properties-common -y
         
         echo " Import the Microsoft GPG key"
-        wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-        sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+        # wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+        wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
+        # sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
         
         echo " Enable the Visual Studio Code APT repository"
-        sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-        
+        # sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
         echo " Update package lists again to include the new VS Code repo "
         sudo apt update
         # E: Conflicting values set for option Signed-By regarding source https://packages.microsoft.com/repos/code/ stable: /etc/apt/trusted.gpg.d/packages.microsoft.gpg != /usr/share/keyrings/microsoft.gpg
         # E: The list of sources could not be read.
-
-sudo apt install wget gpg apt-transport-https software-properties-common -y
-3. Import Microsoft GPG key and add it to trusted keyring
-bash
-Copy
-Edit
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
-4. Add the VS Code APT repository using the keyring
-bash
-Copy
-Edit
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
-5. Update the package index again
-bash
-Copy
-Edit
-sudo apt update
-6. Install Visual Studio Code
-bash
-Copy
-Edit
-sudo apt install code -y
+        
         echo " Install Visual Studio Code"
         # sudo apt install code -y
         # ✅ Check Installation
         # Run this command to verify the install:
-        # code --version
+        code --version
 
 
         
@@ -319,6 +299,7 @@ sudo apt install code -y
         echo "----------------------------------------------------"
         # https://code.visualstudio.com/Download#
         # https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+        
         echo "Done running App installs and updates"
         echo "----------------------------------------------------"
         echo "----------------------------------------------------"
