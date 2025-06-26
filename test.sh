@@ -1,55 +1,48 @@
-#! /bin/bash
+#!/bin/bash
 # ============================================================================
-echo " "
-echo "   ___  _   _  ____  ___  _  _     ___  _____  _    _  ____  _  _ "
-echo "  / __)( )_( )( ___)/ __)( )/ )   / __)(  _  )( \/\/ )(_  _)( \( ) "
-echo " ( (__  ) _ (  )__)( (__  )  (   ( (_-. )(_)(  )    (  _)(_  )  ( "
-echo "  \___)(_) (_)(____)\___)(_)\_)   \___/(_____)(__/\__)(____)(_)\_) "
-echo " Checking If The $USER/gowin Directory Exists "
-echo "----------------------------------------------------"
-echo " Do you wish to check if the gowin directory exists in $USER home?"
-echo " If it does, do you want to back it up?"
-echo " Enter y/Y or n/N or any Key?"
-read -p "Check & Backup the $USER/gowin Directory In $USER Home?: " yesBackUpGowin
-# elif statements
-if [ "$yesBackUpGowin" == "y" ] || [ "$yesBackUpGowin" == "Y" ]; then
-  echo "----------------------------------------------------"
-    echo "getting home with cd "
-    echo "----------------------------------------------------"
-    echo " "
-    cd
-    pwd
-    ls -l
-    echo "----------------------------------------------------"
-    if [ -d "$USER/gowin" ];
-        then
-            echo "The Directory $USER/gowin exists"
-            echo "Creating a backup in $USER/gowinBackUp"
-            sudo mv gowin gowinBackUp 
-    fi
-    # ============================================================================
-    echo " "  
-    echo '   ___  ____  ____    __   ____  ____    ____  ____  ____ '
-    echo '  / __)(  _ \( ___)  /__\ (_  _)( ___)  (  _ \(_  _)(  _ \ '
-    echo ' ( (__  )   / )__)  /(__)\  )(   )__)    )(_) )_)(_  )   / '
-    echo '  \___)(_)\_)(____)(__)(__)(__) (____)  (____/(____)(_)\_) '
-          
-    echo " The $USER/gowin Directory Does Not Exist"
-    echo " Create this gowin directory In $USER/gowin"
-    sudo mkdir -p /home/$USER/gowin
-    echo "----------------------------------------------------"
-elif [ "$yesBackUpGowin" == "n" ] || [ "$yesBackUpGowin" == "N" ]
-    then
-    echo "Skipping This Check For gowin Directory Step"
-    if [ -d "$USER/gowin" ];
-        then
-            echo "The Directory $USER/gowin exists"
-            echo "Exiting this shell scripts"
-            exit 1
-            # return
-    fi
-else
-    echo "Any Key - Skipping This Check For gowin Directory Step"
-    exit 1
-    # return
-fi
+# install-vscode.sh
+# Installs the latest Visual Studio Code on Ubuntu using only CLI tools.
+# Author: STEAM Clown - www.steamclown.org
+# ============================================================================
+# Usage:
+#   chmod +x install-vscode.sh
+#   ./install-vscode.sh
+# ============================================================================
+
+echo "==================================================="
+echo "  Visual Studio Code Installation Script for Ubuntu"
+echo "==================================================="
+
+# Step 1: Clean up any conflicting GPG keys
+echo "[Step 1] Removing conflicting GPG keys if present..."
+sudo rm -f /etc/apt/trusted.gpg.d/packages.microsoft.gpg
+
+# Step 2: Update package index and install required tools
+echo "[Step 2] Updating package index and installing dependencies..."
+sudo apt update
+sudo apt install -y wget gpg apt-transport-https software-properties-common
+
+# Step 3: Download and install the Microsoft GPG key
+echo "[Step 3] Downloading and registering the Microsoft GPG key..."
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
+
+# Step 4: Add the Visual Studio Code APT repository
+echo "[Step 4] Adding the VS Code repository to sources.list.d..."
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/code stable main" | \
+  sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+
+# Step 5: Update the package list again
+echo "[Step 5] Updating package list to include the VS Code repository..."
+sudo apt update
+
+# Step 6: Install Visual Studio Code
+echo "[Step 6] Installing Visual Studio Code..."
+sudo apt install -y code
+
+# Step 7: Verify installation
+echo "[Step 7] Verifying installation..."
+code --version && echo "✅ VS Code installed successfully!" || echo "❌ VS Code installation failed."
+
+echo "==================================================="
+echo "       Done! You can now run VS Code with 'code'"
+echo "==================================================="
