@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # ============================================================================
 # shell script to restore an Ubuntu Linux Class Image after a clean Ubuntu install
 # Source: STEAM Clown - www.steamclown.org 
