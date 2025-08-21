@@ -223,6 +223,29 @@ which ifconfig
 ifconfig
 code --version
 
+python3 -V
+pip3  -V
+
+echo "Do you wish to install pip3?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )             
+            echo "----------------------------------------------------";
+            echo "installing pip3";
+            echo "----------------------------------------------------";
+            echo " ";
+            sudo apt install python3-pip -y;
+            echo " ";
+            echo "----------------------------------------------------";
+            echo "Done Installing pip3";
+            echo "----------------------------------------------------";
+            break;;
+        No ) break;;
+    esac
+done
+python3 -V
+pip3  -V
+
 # sudo apt update
 # sudo apt upgrade -y
 
