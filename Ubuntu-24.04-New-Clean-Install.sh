@@ -246,6 +246,7 @@ done
 python3 -V
 pip3  -V
 
+
 # sudo apt update
 # sudo apt upgrade -y
 
