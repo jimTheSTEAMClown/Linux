@@ -167,8 +167,8 @@ configure_desktop_settings() {
 install_editors_and_ides() {
     log_section "Editors and IDEs: vim, thonny, notepad++, arduino, VS Code"
     run sudo apt install -y vim thonny
-    run sudo snap install notepad-plus-plus
-    run sudo apt install -y arduino
+    # run sudo snap install notepad-plus-plus
+    # run sudo apt install -y arduino
     run sudo snap install --classic code
 }
 
